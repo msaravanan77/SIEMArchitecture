@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 2200" width="1800" height="2200">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 38px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 17px; fill: #666; }
+      .section-title { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #333; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #fff; }
+      .component-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .component-text { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+      .highlight-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #e74c3c; }
+      .mode-label { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #2c3e50; }
+
+      .static-layer { fill: #3498db; stroke: #2980b9; stroke-width: 3; }
+      .dynamic-layer { fill: #e67e22; stroke: #d35400; stroke-width: 3; }
+      .network-layer { fill: #9b59b6; stroke: #7d3c98; stroke-width: 3; }
+      .composite-layer { fill: #27ae60; stroke: #1e8449; stroke-width: 4; }
+
+      .realtime-box { fill: #d4edda; stroke: #28a745; stroke-width: 3; }
+      .runtime-box { fill: #fff3cd; stroke: #ffc107; stroke-width: 3; }
+      .postmortem-box { fill: #f8d7da; stroke: #dc3545; stroke-width: 3; }
+
+      .dna-box { fill: #fff; stroke: #34495e; stroke-width: 2; }
+      .timeline-box { fill: #ecf0f1; stroke: #95a5a6; stroke-width: 2; }
+
+      .arrow { stroke: #3498db; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .flow-arrow { stroke: #27ae60; stroke-width: 4; fill: none; marker-end: url(#arrowhead-green); }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498db" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#27ae60" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="900" y="50" text-anchor="middle" class="title">cyDNA Digital Footprint Analysis</text>
+  <text x="900" y="80" text-anchor="middle" class="subtitle">The Complete Genetic Profile: Real-Time Prevention + Detection + Post-Mortem Forensics</text>
+
+  <!-- ============================================ -->
+  <!-- DIGITAL FOOTPRINT LAYERS -->
+  <!-- ============================================ -->
+  <rect x="50" y="120" width="1700" height="700" fill="#f8f9fa" stroke="#34495e" stroke-width="3" rx="10"/>
+  <text x="900" y="160" text-anchor="middle" class="section-title">The Three Layers of Digital Footprint (Cyber DNA)</text>
+
+  <!-- Layer 1: Static Footprint -->
+  <rect x="100" y="190" width="500" height="600" class="static-layer" rx="10"/>
+  <text x="120" y="225" class="layer-title">Layer 1: Static Footprint (File DNA)</text>
+  <text x="120" y="250" class="component-text" fill="#fff">Analysis: File at rest, pre-execution</text>
+
+  <rect x="130" y="270" width="440" height="230" class="dna-box" rx="5"/>
+  <text x="350" y="295" text-anchor="middle" class="component-title">File Structure Analysis</text>
+  <text x="150" y="320" class="component-text">• File format (PE, ELF, Mach-O, PDF, Office)</text>
+  <text x="150" y="340" class="component-text">• Section headers and sizes (.text, .data, .rsrc)</text>
+  <text x="150" y="360" class="component-text">• Import/export tables (APIs used)</text>
+  <text x="150" y="380" class="component-text">• Resource sections (icons, strings, data)</text>
+  <text x="150" y="400" class="component-text">• Code signing certificates</text>
+  <text x="150" y="420" class="component-text">• Build timestamps and version info</text>
+  <text x="150" y="445" class="component-text" font-weight="bold">DNA Markers:</text>
+  <text x="150" y="465" class="component-text">→ Compiler fingerprints</text>
+  <text x="150" y="485" class="component-text">→ Packer/obfuscator signatures</text>
+
+  <rect x="130" y="510" width="440" height="110" class="dna-box" rx="5"/>
+  <text x="350" y="535" text-anchor="middle" class="component-title">Code Pattern Analysis</text>
+  <text x="150" y="560" class="component-text">• Instruction sequences (assembly opcodes)</text>
+  <text x="150" y="580" class="component-text">• Function call graphs</text>
+  <text x="150" y="600" class="component-text">• String patterns and embedded URLs</text>
+
+  <rect x="130" y="630" width="440" height="145" class="dna-box" rx="5"/>
+  <text x="350" y="655" text-anchor="middle" class="component-title">Static DNA Output</text>
+  <text x="150" y="680" class="component-text" font-weight="bold">Example Result:</text>
+  <text x="150" y="700" class="component-text">"File structure: 92% similar to Emotet family"</text>
+  <text x="150" y="720" class="component-text">"Code reuse: 65% from known trojan toolkit"</text>
+  <text x="150" y="740" class="component-text">"Packer: Custom modified UPX variant"</text>
+  <text x="150" y="760" class="component-text">Speed: &lt; 1 second (instant classification)</text>
+
+  <!-- Layer 2: Dynamic Footprint -->
+  <rect x="650" y="190" width="500" height="600" class="dynamic-layer" rx="10"/>
+  <text x="670" y="225" class="layer-title">Layer 2: Dynamic Footprint (Behavioral DNA)</text>
+  <text x="670" y="250" class="component-text" fill="#fff">Analysis: File executing, runtime behavior</text>
+
+  <rect x="680" y="270" width="440" height="160" class="dna-box" rx="5"/>
+  <text x="900" y="295" text-anchor="middle" class="component-title">Runtime Behavior Patterns</text>
+  <text x="700" y="320" class="component-text">• Process spawning sequences</text>
+  <text x="700" y="340" class="component-text">• File system operations (create, modify, delete)</text>
+  <text x="700" y="360" class="component-text">• Registry modifications (persistence keys)</text>
+  <text x="700" y="380" class="component-text">• Network connections and protocols</text>
+  <text x="700" y="400" class="component-text">• Privilege escalation attempts</text>
+  <text x="700" y="420" class="component-text">• Encryption/decryption activities</text>
+
+  <rect x="680" y="440" width="440" height="170" class="dna-box" rx="5"/>
+  <text x="900" y="465" text-anchor="middle" class="component-title">API Call Sequences (DNA)</text>
+  <text x="700" y="490" class="component-text">• System API usage patterns</text>
+  <text x="700" y="510" class="component-text">• Anti-analysis techniques (debugger detection)</text>
+  <text x="700" y="530" class="component-text">• Code injection methods (CreateRemoteThread)</text>
+  <text x="700" y="550" class="component-text">• Credential dumping APIs (LSASS access)</text>
+  <text x="700" y="570" class="component-text">• Cryptographic API calls</text>
+  <text x="700" y="590" class="component-text">• Keylogging/screen capture behaviors</text>
+
+  <rect x="680" y="620" width="440" height="155" class="dna-box" rx="5"/>
+  <text x="900" y="645" text-anchor="middle" class="component-title">Behavioral DNA Output</text>
+  <text x="700" y="670" class="component-text" font-weight="bold">Example Result:</text>
+  <text x="700" y="690" class="component-text">"Behavior: 98% match to ransomware technique"</text>
+  <text x="700" y="710" class="component-text">"API sequence matches WannaCry variant"</text>
+  <text x="700" y="730" class="component-text">"MITRE ATT&CK: T1486 (Data Encrypted)"</text>
+  <text x="700" y="750" class="component-text">Speed: Seconds (during execution monitoring)</text>
+
+  <!-- Layer 3: Network Footprint -->
+  <rect x="1200" y="190" width="500" height="600" class="network-layer" rx="10"/>
+  <text x="1220" y="225" class="layer-title">Layer 3: Network Footprint (Communication DNA)</text>
+  <text x="1220" y="250" class="component-text" fill="#fff">Analysis: Network communication patterns</text>
+
+  <rect x="1230" y="270" width="440" height="140" class="dna-box" rx="5"/>
+  <text x="1450" y="295" text-anchor="middle" class="component-title">Communication Patterns</text>
+  <text x="1250" y="320" class="component-text">• Protocol usage (HTTP, DNS, custom binary)</text>
+  <text x="1250" y="340" class="component-text">• Packet sizes and timing patterns</text>
+  <text x="1250" y="360" class="component-text">• Encryption methods (TLS fingerprints)</text>
+  <text x="1250" y="380" class="component-text">• Beaconing intervals (C2 heartbeats)</text>
+  <text x="1250" y="400" class="component-text">• Data exfiltration volumes and timing</text>
+
+  <rect x="1230" y="420" width="440" height="140" class="dna-box" rx="5"/>
+  <text x="1450" y="445" text-anchor="middle" class="component-title">C2 Infrastructure DNA</text>
+  <text x="1250" y="470" class="component-text">• Domain generation algorithms (DGA patterns)</text>
+  <text x="1250" y="490" class="component-text">• IP geolocation patterns</text>
+  <text x="1250" y="510" class="component-text">• SSL/TLS certificate fingerprints</text>
+  <text x="1250" y="530" class="component-text">• HTTP headers and user-agent strings</text>
+  <text x="1250" y="550" class="component-text">• URL path patterns</text>
+
+  <rect x="1230" y="570" width="440" height="205" class="dna-box" rx="5"/>
+  <text x="1450" y="595" text-anchor="middle" class="component-title">Network DNA Output</text>
+  <text x="1250" y="620" class="component-text" font-weight="bold">Example Result:</text>
+  <text x="1250" y="640" class="component-text">"C2 pattern: Cobalt Strike beacon (17 min interval)"</text>
+  <text x="1250" y="660" class="component-text">"DGA: Matches Necurs botnet algorithm"</text>
+  <text x="1250" y="680" class="component-text">"TLS cert: Known APT29 infrastructure"</text>
+  <text x="1250" y="700" class="component-text">"Traffic pattern: Data staging for exfiltration"</text>
+  <text x="1250" y="720" class="component-text">Speed: Real-time (network tap analysis)</text>
+  <text x="1250" y="745" class="component-text" font-weight="bold">Post-mortem: PCAP analysis reveals full timeline</text>
+
+  <!-- Arrows combining layers -->
+  <path d="M 350 790 L 900 850" class="flow-arrow"/>
+  <path d="M 900 790 L 900 850" class="flow-arrow"/>
+  <path d="M 1450 790 L 900 850" class="flow-arrow"/>
+
+  <!-- ============================================ -->
+  <!-- COMPOSITE DNA PROFILE -->
+  <!-- ============================================ -->
+  <rect x="650" y="850" width="500" height="160" class="composite-layer" rx="10"/>
+  <text x="670" y="885" class="layer-title">Composite cyDNA Profile (Complete Genetic Signature)</text>
+
+  <rect x="680" y="905" width="440" height="85" fill="#fff" opacity="0.95" stroke="#1e8449" stroke-width="2" rx="5"/>
+  <text x="900" y="930" text-anchor="middle" class="component-title">The Complete Digital Footprint</text>
+  <text x="700" y="955" class="component-text">Static DNA + Dynamic DNA + Network DNA = Persistent Genetic Fingerprint</text>
+  <text x="700" y="975" class="component-text">Even if hash changes, behavior partially altered, or infrastructure shifts,</text>
+  <text x="700" y="990" class="component-text" font-weight="bold">GENETIC MARKERS remain similar → Variant detection possible!</text>
+
+  <!-- ============================================ -->
+  <!-- THREE OPERATIONAL MODES -->
+  <!-- ============================================ -->
+  <rect x="50" y="1050" width="1700" height="60" fill="#2c3e50" rx="5"/>
+  <text x="900" y="1090" text-anchor="middle" class="layer-title" font-size="24">cyDNA: Three Operational Modes (NOT Just Post-Mortem!)</text>
+
+  <!-- Mode 1: Real-Time Prevention -->
+  <rect x="80" y="1140" width="520" height="480" class="realtime-box" rx="10"/>
+  <text x="100" y="1180" class="mode-label" fill="#28a745">Mode 1: REAL-TIME PREVENTION</text>
+  <text x="100" y="1205" class="component-text">Timeline: BEFORE file executes</text>
+
+  <rect x="110" y="1220" width="460" height="70" class="timeline-box" rx="5"/>
+  <text x="340" y="1245" text-anchor="middle" class="component-title">Step 1: File Arrives</text>
+  <text x="130" y="1270" class="component-text">Email attachment, download, USB drive, network share</text>
+
+  <text x="340" y="1310" text-anchor="middle" class="component-text">↓ Instant DNA extraction (milliseconds)</text>
+
+  <rect x="110" y="1325" width="460" height="90" class="timeline-box" rx="5"/>
+  <text x="340" y="1350" text-anchor="middle" class="component-title">Step 2: Static DNA Analysis</text>
+  <text x="130" y="1375" class="component-text">Extract file structure, code patterns, genetic markers</text>
+  <text x="130" y="1395" class="component-text">Compare to malware family database</text>
+  <text x="130" y="1410" class="component-text">Result: "95% match to Emotet trojan family"</text>
+
+  <text x="340" y="1440" text-anchor="middle" class="component-text">↓ Decision: BLOCK (real-time action)</text>
+
+  <rect x="110" y="1455" width="460" height="145" fill="#d4edda" stroke="#28a745" stroke-width="3" rx="5"/>
+  <text x="340" y="1480" text-anchor="middle" class="component-title" fill="#1e8449">PREVENTED BEFORE EXECUTION!</text>
+  <text x="130" y="1505" class="component-text">✓ File never runs</text>
+  <text x="130" y="1525" class="component-text">✓ No damage to system</text>
+  <text x="130" y="1545" class="component-text">✓ User notified: "Malicious file blocked"</text>
+  <text x="130" y="1565" class="component-text">✓ DNA sent to threat intelligence for sharing</text>
+  <text x="130" y="1590" class="component-text" font-weight="bold">Examples: Cylance, Intezer Protect, Windows Defender</text>
+
+  <!-- Mode 2: Runtime Detection -->
+  <rect x="640" y="1140" width="520" height="480" class="runtime-box" rx="10"/>
+  <text x="660" y="1180" class="mode-label" fill="#d68910">Mode 2: RUNTIME DETECTION</text>
+  <text x="660" y="1205" class="component-text">Timeline: DURING file execution (active attack)</text>
+
+  <rect x="670" y="1220" width="460" height="70" class="timeline-box" rx="5"/>
+  <text x="900" y="1245" text-anchor="middle" class="component-title">Step 1: Process Starts</text>
+  <text x="690" y="1270" class="component-text">Malware begins executing (passed initial checks or fileless)</text>
+
+  <text x="900" y="1310" text-anchor="middle" class="component-text">↓ Continuous behavioral monitoring</text>
+
+  <rect x="670" y="1325" width="460" height="110" class="timeline-box" rx="5"/>
+  <text x="900" y="1350" text-anchor="middle" class="component-title">Step 2: Behavioral DNA Monitoring</text>
+  <text x="690" y="1375" class="component-text">EDR monitors: API calls, memory ops, file changes, network</text>
+  <text x="690" y="1395" class="component-text">Detects: Ransomware encryption pattern (behavioral DNA)</text>
+  <text x="690" y="1415" class="component-text">Result: "Matches ransomware technique (MITRE T1486)"</text>
+
+  <text x="900" y="1455" text-anchor="middle" class="component-text">↓ Decision: TERMINATE (real-time response)</text>
+
+  <rect x="670" y="1470" width="460" height="130" fill="#fff3cd" stroke="#ffc107" stroke-width="3" rx="5"/>
+  <text x="900" y="1495" text-anchor="middle" class="component-title" fill="#d68910">CONTAINED DURING EXECUTION!</text>
+  <text x="690" y="1520" class="component-text">✓ Kill malicious process immediately</text>
+  <text x="690" y="1540" class="component-text">✓ Rollback file system changes</text>
+  <text x="690" y="1560" class="component-text">✓ Block network connections</text>
+  <text x="690" y="1585" class="component-text" font-weight="bold">Examples: CrowdStrike IOAs, SentinelOne, Carbon Black</text>
+
+  <!-- Mode 3: Post-Mortem Forensics -->
+  <rect x="1200" y="1140" width="520" height="480" class="postmortem-box" rx="10"/>
+  <text x="1220" y="1180" class="mode-label" fill="#dc3545">Mode 3: POST-MORTEM FORENSICS</text>
+  <text x="1220" y="1205" class="component-text">Timeline: AFTER attack (investigation phase)</text>
+
+  <rect x="1230" y="1220" width="460" height="70" class="timeline-box" rx="5"/>
+  <text x="1460" y="1245" text-anchor="middle" class="component-title">Step 1: Incident Detected</text>
+  <text x="1250" y="1270" class="component-text">Breach discovered, need to understand scope and attribution</text>
+
+  <text x="1460" y="1310" text-anchor="middle" class="component-text">↓ Collect forensic artifacts</text>
+
+  <rect x="1230" y="1325" width="460" height="110" class="timeline-box" rx="5"/>
+  <text x="1460" y="1350" text-anchor="middle" class="component-title">Step 2: Deep DNA Analysis</text>
+  <text x="1250" y="1375" class="component-text">Collect: Memory dumps, files, PCAP, logs</text>
+  <text x="1250" y="1395" class="component-text">Analyze: Complete DNA profile (all 3 layers)</text>
+  <text x="1250" y="1415" class="component-text">Result: "APT29 toolkit, 6-month dwell time, exfil 2TB"</text>
+
+  <text x="1460" y="1455" text-anchor="middle" class="component-text">↓ Comprehensive understanding</text>
+
+  <rect x="1230" y="1470" width="460" height="130" fill="#f8d7da" stroke="#dc3545" stroke-width="3" rx="5"/>
+  <text x="1460" y="1495" text-anchor="middle" class="component-title" fill="#b02a37">COMPLETE INVESTIGATION!</text>
+  <text x="1250" y="1520" class="component-text">✓ Attack timeline reconstructed</text>
+  <text x="1250" y="1540" class="component-text">✓ Threat actor attribution (DNA signature)</text>
+  <text x="1250" y="1560" class="component-text">✓ Create IOCs and signatures for future prevention</text>
+  <text x="1250" y="1585" class="component-text" font-weight="bold">Examples: Intezer Analyze, VirusTotal, Hybrid Analysis</text>
+
+  <!-- ============================================ -->
+  <!-- ANSWER BOX -->
+  <!-- ============================================ -->
+  <rect x="50" y="1660" width="1700" height="500" fill="#fff5f5" stroke="#e74c3c" stroke-width="4" rx="10"/>
+  <text x="900" y="1710" text-anchor="middle" class="highlight-text" font-size="24">ANSWER: cyDNA is NOT Only for Post-Mortem!</text>
+
+  <rect x="100" y="1740" width="1600" height="180" fill="#fff" stroke="#34495e" stroke-width="2" rx="5"/>
+  <text x="900" y="1775" text-anchor="middle" class="component-title" font-size="18">Modern cyDNA Operates in ALL Three Modes Simultaneously</text>
+
+  <rect x="130" y="1800" width="490" height="100" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="5"/>
+  <text x="375" y="1825" text-anchor="middle" class="component-title" fill="#1e8449">REAL-TIME PREVENTION</text>
+  <text x="150" y="1850" class="component-text">Primary Mode (2020+)</text>
+  <text x="150" y="1870" class="component-text">Block malware BEFORE execution</text>
+  <text x="150" y="1890" class="component-text">Speed: Milliseconds to seconds</text>
+
+  <rect x="650" y="1800" width="490" height="100" fill="#fff3cd" stroke="#ffc107" stroke-width="2" rx="5"/>
+  <text x="895" y="1825" text-anchor="middle" class="component-title" fill="#d68910">RUNTIME DETECTION</text>
+  <text x="670" y="1850" class="component-text">Active Protection</text>
+  <text x="670" y="1870" class="component-text">Stop attacks DURING execution</text>
+  <text x="670" y="1890" class="component-text">Speed: Seconds (behavioral monitoring)</text>
+
+  <rect x="1170" y="1800" width="490" height="100" fill="#f8d7da" stroke="#dc3545" stroke-width="2" rx="5"/>
+  <text x="1415" y="1825" text-anchor="middle" class="component-title" fill="#b02a37">POST-MORTEM FORENSICS</text>
+  <text x="1190" y="1850" class="component-text">Bonus Capability</text>
+  <text x="1190" y="1870" class="component-text">Investigate AFTER incidents</text>
+  <text x="1190" y="1890" class="component-text">Speed: Hours to days (deep analysis)</text>
+
+  <!-- Digital Footprint Explanation -->
+  <rect x="100" y="1940" width="1600" height="200" fill="#e7f3ff" stroke="#3498db" stroke-width="3" rx="5"/>
+  <text x="900" y="1975" text-anchor="middle" class="component-title" font-size="18">"Digital Footprint" in cyDNA Context</text>
+
+  <text x="130" y="2005" class="component-text" font-weight="bold" font-size="13">NOT the traditional web browsing/social media footprint!</text>
+
+  <rect x="130" y="2020" width="1520" height="100" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="140" y="2045" class="component-text" font-size="12" font-weight="bold">Digital Footprint = Complete Behavioral & Structural Signature:</text>
+  <text x="160" y="2070" class="component-text">• Static Layer: File structure, code patterns, compilation artifacts</text>
+  <text x="160" y="2090" class="component-text">• Dynamic Layer: Runtime behavior, API sequences, memory operations</text>
+  <text x="160" y="2110" class="component-text">• Network Layer: Communication patterns, C2 infrastructure, protocol DNA</text>
+
+  <!-- Bottom Summary -->
+  <rect x="100" y="2150" width="750" height="70" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="5"/>
+  <text x="475" y="2175" text-anchor="middle" class="component-text" font-weight="bold">This footprint is PERSISTENT:</text>
+  <text x="475" y="2195" text-anchor="middle" class="component-text">Genetic markers remain even if file is modified,</text>
+  <text x="475" y="2210" text-anchor="middle" class="component-text">behavior altered, or infrastructure changed!</text>
+
+  <rect x="870" y="2150" width="780" height="70" fill="#fff3cd" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="1260" y="2175" text-anchor="middle" class="component-text" font-weight="bold">Used in ALL THREE MODES:</text>
+  <text x="1260" y="2195" text-anchor="middle" class="component-text">Real-time prevention, runtime detection, AND post-mortem forensics</text>
+  <text x="1260" y="2210" text-anchor="middle" class="component-text" font-weight="bold">cyDNA is predominantly PROACTIVE, with forensic bonus!</text>
+</svg>

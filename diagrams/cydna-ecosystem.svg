@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 2000" width="1800" height="2000">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 38px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 17px; fill: #666; }
+      .section-title { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; fill: #333; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #fff; }
+      .component-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .component-text { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+      .highlight-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #e74c3c; }
+      .universe-label { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+
+      .cydna-layer1 { fill: #9b59b6; stroke: #7d3c98; stroke-width: 3; }
+      .cydna-layer2 { fill: #8e44ad; stroke: #6c3483; stroke-width: 3; }
+      .cydna-layer3 { fill: #3498db; stroke: #2980b9; stroke-width: 3; }
+      .cydna-layer4 { fill: #e67e22; stroke: #d35400; stroke-width: 3; }
+      .cydna-layer5 { fill: #27ae60; stroke: #1e8449; stroke-width: 3; }
+
+      .siem-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 3; opacity: 0.9; }
+      .integration-box { fill: #f39c12; stroke: #d68910; stroke-width: 2; stroke-dasharray: 5,5; }
+      .tool-box { fill: #fff; stroke: #34495e; stroke-width: 2; }
+
+      .universe-border-cydna { fill: none; stroke: #9b59b6; stroke-width: 5; stroke-dasharray: 10,5; }
+      .universe-border-siem { fill: none; stroke: #e74c3c; stroke-width: 5; stroke-dasharray: 10,5; }
+
+      .arrow { stroke: #3498db; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .data-flow { stroke: #9b59b6; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead-purple); }
+      .integration-arrow { stroke: #f39c12; stroke-width: 3; fill: none; marker-end: url(#arrowhead-orange); }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498db" />
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#9b59b6" />
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f39c12" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="900" y="50" text-anchor="middle" class="title">cyDNA: The Parallel Security Universe</text>
+  <text x="900" y="80" text-anchor="middle" class="subtitle">cyDNA Ecosystem - Its Own Domain with Its Own Umbrella</text>
+
+  <!-- The Two Parallel Universes -->
+  <rect x="50" y="120" width="850" height="1200" class="universe-border-cydna" rx="20"/>
+  <text x="475" y="160" text-anchor="middle" class="universe-label" fill="#9b59b6">cyDNA UNIVERSE</text>
+  <text x="475" y="185" text-anchor="middle" class="component-text">Genetic/Behavioral Analysis Domain</text>
+
+  <rect x="950" y="120" width="800" height="1200" class="universe-border-siem" rx="20"/>
+  <text x="1350" y="160" text-anchor="middle" class="universe-label" fill="#e74c3c">SIEM UNIVERSE</text>
+  <text x="1350" y="185" text-anchor="middle" class="component-text">Event Correlation Domain</text>
+
+  <!-- ============================================ -->
+  <!-- cyDNA UNIVERSE - Layer 1: Collection -->
+  <!-- ============================================ -->
+  <rect x="80" y="220" width="790" height="160" class="cydna-layer1" rx="10"/>
+  <text x="100" y="250" class="layer-title">Layer 1: DNA Collection & Sensors</text>
+
+  <rect x="100" y="265" width="180" height="95" class="tool-box" rx="5"/>
+  <text x="190" y="285" text-anchor="middle" class="component-title">EDR Agents</text>
+  <text x="190" y="305" text-anchor="middle" class="component-text">CrowdStrike Falcon</text>
+  <text x="190" y="320" text-anchor="middle" class="component-text">SentinelOne</text>
+  <text x="190" y="335" text-anchor="middle" class="component-text">Collects: Files,</text>
+  <text x="190" y="350" text-anchor="middle" class="component-text">processes, memory</text>
+
+  <rect x="300" y="265" width="180" height="95" class="tool-box" rx="5"/>
+  <text x="390" y="285" text-anchor="middle" class="component-title">Sandboxes</text>
+  <text x="390" y="305" text-anchor="middle" class="component-text">Cuckoo, Joe Sandbox</text>
+  <text x="390" y="320" text-anchor="middle" class="component-text">Hybrid Analysis</text>
+  <text x="390" y="335" text-anchor="middle" class="component-text">Collects: Behavioral</text>
+  <text x="390" y="350" text-anchor="middle" class="component-text">footprint, DNA</text>
+
+  <rect x="500" y="265" width="180" height="95" class="tool-box" rx="5"/>
+  <text x="590" y="285" text-anchor="middle" class="component-title">File Gateways</text>
+  <text x="590" y="305" text-anchor="middle" class="component-text">Email attachments</text>
+  <text x="590" y="320" text-anchor="middle" class="component-text">Download monitors</text>
+  <text x="590" y="335" text-anchor="middle" class="component-text">Collects: Files</text>
+  <text x="590" y="350" text-anchor="middle" class="component-text">for analysis</text>
+
+  <rect x="700" y="265" width="150" height="95" class="tool-box" rx="5"/>
+  <text x="775" y="285" text-anchor="middle" class="component-title">Forensics Tools</text>
+  <text x="775" y="305" text-anchor="middle" class="component-text">Volatility</text>
+  <text x="775" y="320" text-anchor="middle" class="component-text">Memory dumps</text>
+  <text x="775" y="335" text-anchor="middle" class="component-text">Disk images</text>
+
+  <!-- Arrows from Layer 1 to Layer 2 -->
+  <path d="M 475 380 L 475 420" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- cyDNA UNIVERSE - Layer 2: DNA Extraction -->
+  <!-- ============================================ -->
+  <rect x="80" y="420" width="790" height="180" class="cydna-layer2" rx="10"/>
+  <text x="100" y="450" class="layer-title">Layer 2: DNA Extraction & Analysis Engines</text>
+
+  <rect x="100" y="465" width="220" height="115" class="tool-box" rx="5"/>
+  <text x="210" y="485" text-anchor="middle" class="component-title">Intezer</text>
+  <text x="210" y="505" text-anchor="middle" class="component-text">Code genome mapping</text>
+  <text x="210" y="520" text-anchor="middle" class="component-text">Genetic analysis</text>
+  <text x="210" y="535" text-anchor="middle" class="component-text">Code reuse detection</text>
+  <text x="210" y="550" text-anchor="middle" class="component-text">Output: DNA profile,</text>
+  <text x="210" y="565" text-anchor="middle" class="component-text">malware family</text>
+
+  <rect x="340" y="465" width="220" height="115" class="tool-box" rx="5"/>
+  <text x="450" y="485" text-anchor="middle" class="component-title">Cylance / AI Engines</text>
+  <text x="450" y="505" text-anchor="middle" class="component-text">ML classification</text>
+  <text x="450" y="520" text-anchor="middle" class="component-text">Feature extraction</text>
+  <text x="450" y="535" text-anchor="middle" class="component-text">Pre-execution analysis</text>
+  <text x="450" y="550" text-anchor="middle" class="component-text">Output: Malicious/</text>
+  <text x="450" y="565" text-anchor="middle" class="component-text">Benign classification</text>
+
+  <rect x="580" y="465" width="270" height="115" class="tool-box" rx="5"/>
+  <text x="715" y="485" text-anchor="middle" class="component-title">Behavioral DNA Engines</text>
+  <text x="715" y="505" text-anchor="middle" class="component-text">CrowdStrike IOAs</text>
+  <text x="715" y="520" text-anchor="middle" class="component-text">Runtime behavior patterns</text>
+  <text x="715" y="535" text-anchor="middle" class="component-text">Technique fingerprinting</text>
+  <text x="715" y="550" text-anchor="middle" class="component-text">Output: Attack technique,</text>
+  <text x="715" y="565" text-anchor="middle" class="component-text">behavioral DNA match</text>
+
+  <!-- Arrows from Layer 2 to Layer 3 -->
+  <path d="M 475 600 L 475 640" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- cyDNA UNIVERSE - Layer 3: DNA Databases -->
+  <!-- ============================================ -->
+  <rect x="80" y="640" width="790" height="180" class="cydna-layer3" rx="10"/>
+  <text x="100" y="670" class="layer-title">Layer 3: DNA Databases (Genome Repositories)</text>
+
+  <rect x="100" y="685" width="200" height="115" class="tool-box" rx="5"/>
+  <text x="200" y="705" text-anchor="middle" class="component-title">VirusTotal</text>
+  <text x="200" y="725" text-anchor="middle" class="component-text">Community database</text>
+  <text x="200" y="740" text-anchor="middle" class="component-text">Billions of samples</text>
+  <text x="200" y="755" text-anchor="middle" class="component-text">Multi-vendor analysis</text>
+  <text x="200" y="770" text-anchor="middle" class="component-text">Relationship graphing</text>
+  <text x="200" y="785" text-anchor="middle" class="component-text">Public + private API</text>
+
+  <rect x="320" y="685" width="200" height="115" class="tool-box" rx="5"/>
+  <text x="420" y="705" text-anchor="middle" class="component-title">Intezer Genome DB</text>
+  <text x="420" y="725" text-anchor="middle" class="component-text">Code gene library</text>
+  <text x="420" y="740" text-anchor="middle" class="component-text">Indexed code chunks</text>
+  <text x="420" y="755" text-anchor="middle" class="component-text">Malware + goodware</text>
+  <text x="420" y="770" text-anchor="middle" class="component-text">Family relationships</text>
+  <text x="420" y="785" text-anchor="middle" class="component-text">Proprietary database</text>
+
+  <rect x="540" y="685" width="150" height="115" class="tool-box" rx="5"/>
+  <text x="615" y="705" text-anchor="middle" class="component-title">MITRE ATT&CK</text>
+  <text x="615" y="725" text-anchor="middle" class="component-text">Technique DNA</text>
+  <text x="615" y="740" text-anchor="middle" class="component-text">Tactic patterns</text>
+  <text x="615" y="755" text-anchor="middle" class="component-text">Procedure library</text>
+  <text x="615" y="770" text-anchor="middle" class="component-text">APT groups</text>
+  <text x="615" y="785" text-anchor="middle" class="component-text">Open framework</text>
+
+  <rect x="710" y="685" width="140" height="115" class="tool-box" rx="5"/>
+  <text x="780" y="705" text-anchor="middle" class="component-title">Vendor TI Feeds</text>
+  <text x="780" y="725" text-anchor="middle" class="component-text">Proprietary</text>
+  <text x="780" y="740" text-anchor="middle" class="component-text">Campaign data</text>
+  <text x="780" y="755" text-anchor="middle" class="component-text">IOC databases</text>
+  <text x="780" y="770" text-anchor="middle" class="component-text">YARA rules</text>
+
+  <!-- Arrows from Layer 3 to Layer 4 -->
+  <path d="M 475 820 L 475 860" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- cyDNA UNIVERSE - Layer 4: Classification -->
+  <!-- ============================================ -->
+  <rect x="80" y="860" width="790" height="180" class="cydna-layer4" rx="10"/>
+  <text x="100" y="890" class="layer-title">Layer 4: Classification, Attribution & Intelligence</text>
+
+  <rect x="100" y="905" width="180" height="115" class="tool-box" rx="5"/>
+  <text x="190" y="925" text-anchor="middle" class="component-title">Malware Family</text>
+  <text x="190" y="940" text-anchor="middle" class="component-title">Classification</text>
+  <text x="190" y="960" text-anchor="middle" class="component-text">Emotet, WannaCry,</text>
+  <text x="190" y="975" text-anchor="middle" class="component-text">TrickBot, etc.</text>
+  <text x="190" y="990" text-anchor="middle" class="component-text">98% DNA match</text>
+  <text x="190" y="1005" text-anchor="middle" class="component-text">to known family</text>
+
+  <rect x="300" y="905" width="180" height="115" class="tool-box" rx="5"/>
+  <text x="390" y="925" text-anchor="middle" class="component-title">APT Attribution</text>
+  <text x="390" y="960" text-anchor="middle" class="component-text">APT28, APT29, etc.</text>
+  <text x="390" y="975" text-anchor="middle" class="component-text">Nation-state actors</text>
+  <text x="390" y="990" text-anchor="middle" class="component-text">Toolset DNA matching</text>
+  <text x="390" y="1005" text-anchor="middle" class="component-text">Campaign tracking</text>
+
+  <rect x="500" y="905" width="180" height="115" class="tool-box" rx="5"/>
+  <text x="590" y="925" text-anchor="middle" class="component-title">Threat Type</text>
+  <text x="590" y="940" text-anchor="middle" class="component-title">Classification</text>
+  <text x="590" y="960" text-anchor="middle" class="component-text">Ransomware, Trojan,</text>
+  <text x="590" y="975" text-anchor="middle" class="component-text">Worm, Backdoor,</text>
+  <text x="590" y="990" text-anchor="middle" class="component-text">Rootkit, etc.</text>
+  <text x="590" y="1005" text-anchor="middle" class="component-text">Based on DNA traits</text>
+
+  <rect x="700" y="905" width="150" height="115" class="tool-box" rx="5"/>
+  <text x="775" y="925" text-anchor="middle" class="component-title">Variant</text>
+  <text x="775" y="940" text-anchor="middle" class="component-title">Detection</text>
+  <text x="775" y="960" text-anchor="middle" class="component-text">New variant of</text>
+  <text x="775" y="975" text-anchor="middle" class="component-text">known family</text>
+  <text x="775" y="990" text-anchor="middle" class="component-text">Zero-day detection</text>
+  <text x="775" y="1005" text-anchor="middle" class="component-text">via DNA similarity</text>
+
+  <!-- Arrows from Layer 4 to Layer 5 -->
+  <path d="M 475 1040 L 475 1080" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- cyDNA UNIVERSE - Layer 5: Response -->
+  <!-- ============================================ -->
+  <rect x="80" y="1080" width="790" height="200" class="cydna-layer5" rx="10"/>
+  <text x="100" y="1110" class="layer-title">Layer 5: Response & Threat Intelligence Sharing</text>
+
+  <rect x="100" y="1125" width="160" height="135" class="tool-box" rx="5"/>
+  <text x="180" y="1145" text-anchor="middle" class="component-title">Real-Time</text>
+  <text x="180" y="1160" text-anchor="middle" class="component-title">Prevention</text>
+  <text x="180" y="1180" text-anchor="middle" class="component-text">Block execution</text>
+  <text x="180" y="1195" text-anchor="middle" class="component-text">Kill processes</text>
+  <text x="180" y="1210" text-anchor="middle" class="component-text">Quarantine files</text>
+  <text x="180" y="1225" text-anchor="middle" class="component-text">Rollback changes</text>
+  <text x="180" y="1240" text-anchor="middle" class="component-text">Speed: Milliseconds</text>
+
+  <rect x="280" y="1125" width="160" height="135" class="tool-box" rx="5"/>
+  <text x="360" y="1145" text-anchor="middle" class="component-title">IOC Generation</text>
+  <text x="360" y="1180" text-anchor="middle" class="component-text">Create indicators:</text>
+  <text x="360" y="1195" text-anchor="middle" class="component-text">• File hashes</text>
+  <text x="360" y="1210" text-anchor="middle" class="component-text">• YARA rules</text>
+  <text x="360" y="1225" text-anchor="middle" class="component-text">• Network IOCs</text>
+  <text x="360" y="1240" text-anchor="middle" class="component-text">• Behavioral patterns</text>
+
+  <rect x="460" y="1125" width="200" height="135" class="tool-box" rx="5"/>
+  <text x="560" y="1145" text-anchor="middle" class="component-title">Threat Intelligence</text>
+  <text x="560" y="1160" text-anchor="middle" class="component-title">Sharing</text>
+  <text x="560" y="1180" text-anchor="middle" class="component-text">STIX/TAXII feeds</text>
+  <text x="560" y="1195" text-anchor="middle" class="component-text">Industry sharing (ISAC)</text>
+  <text x="560" y="1210" text-anchor="middle" class="component-text">Vendor ecosystems</text>
+  <text x="560" y="1225" text-anchor="middle" class="component-text">Community platforms</text>
+  <text x="560" y="1240" text-anchor="middle" class="component-text">(VirusTotal, etc.)</text>
+
+  <rect x="680" y="1125" width="170" height="135" class="tool-box" rx="5"/>
+  <text x="765" y="1145" text-anchor="middle" class="component-title">Integration</text>
+  <text x="765" y="1160" text-anchor="middle" class="component-title">with SIEM/SOAR</text>
+  <text x="765" y="1180" text-anchor="middle" class="component-text">Send enriched alerts</text>
+  <text x="765" y="1195" text-anchor="middle" class="component-text">Classification data</text>
+  <text x="765" y="1210" text-anchor="middle" class="component-text">DNA profiles</text>
+  <text x="765" y="1225" text-anchor="middle" class="component-text">Attribution info</text>
+  <text x="765" y="1240" text-anchor="middle" class="component-text">→ To SIEM Universe</text>
+
+  <!-- Integration arrow to SIEM -->
+  <path d="M 850 1200 L 980 1000" class="integration-arrow" stroke-width="4"/>
+  <text x="880" y="1100" class="component-text" fill="#f39c12" font-weight="bold">Sends Enriched Alerts</text>
+
+  <!-- ============================================ -->
+  <!-- SIEM UNIVERSE (Simplified View) -->
+  <!-- ============================================ -->
+  <rect x="980" y="400" width="730" height="800" class="siem-box" rx="10"/>
+  <text x="1000" y="440" class="layer-title" font-size="22">SIEM Platform</text>
+  <text x="1000" y="465" class="component-text" fill="#fff">Event-Based Correlation & Analysis</text>
+
+  <!-- SIEM Components -->
+  <rect x="1010" y="490" width="330" height="280" fill="#fff" opacity="0.9" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="1175" y="515" text-anchor="middle" class="component-title">SIEM Core Functions</text>
+  <text x="1030" y="545" class="component-text">• Collect logs from ALL sources</text>
+  <text x="1030" y="565" class="component-text">• Normalize events to common schema</text>
+  <text x="1030" y="585" class="component-text">• Correlate events across infrastructure</text>
+  <text x="1030" y="605" class="component-text">• Detect patterns and anomalies</text>
+  <text x="1030" y="625" class="component-text">• Generate contextualized alerts</text>
+  <text x="1030" y="650" class="component-text" font-weight="bold">Data Sources:</text>
+  <text x="1030" y="670" class="component-text">✓ Firewalls, network devices</text>
+  <text x="1030" y="690" class="component-text">✓ Endpoints (OS logs)</text>
+  <text x="1030" y="710" class="component-text">✓ Cloud platforms (AWS, Azure)</text>
+  <text x="1030" y="730" class="component-text">✓ Applications, databases</text>
+  <text x="1030" y="750" class="component-text">✓ Identity systems (AD, SSO)</text>
+
+  <rect x="1360" y="490" width="330" height="280" fill="#fff" opacity="0.9" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="1525" y="515" text-anchor="middle" class="component-title">What SIEM Answers</text>
+  <text x="1380" y="545" class="component-text" font-weight="bold">Primary Question:</text>
+  <text x="1380" y="565" class="component-text">"What's HAPPENING across</text>
+  <text x="1380" y="585" class="component-text">my infrastructure?"</text>
+  <text x="1380" y="610" class="component-text" font-weight="bold">Example Detections:</text>
+  <text x="1380" y="630" class="component-text">• User login from 2 locations</text>
+  <text x="1380" y="650" class="component-text">• Failed authentication spike</text>
+  <text x="1380" y="670" class="component-text">• Unusual data transfer volume</text>
+  <text x="1380" y="690" class="component-text">• Privilege escalation sequence</text>
+  <text x="1380" y="715" class="component-text" font-weight="bold">Strength:</text>
+  <text x="1380" y="735" class="component-text">Enterprise-wide visibility</text>
+  <text x="1380" y="755" class="component-text">Connects dots across systems</text>
+
+  <!-- Integration Box -->
+  <rect x="1010" y="800" width="680" height="180" class="integration-box" rx="8"/>
+  <text x="1350" y="830" text-anchor="middle" class="highlight-text" fill="#d68910">INTEGRATION POINT</text>
+  <text x="1350" y="860" text-anchor="middle" class="component-text" font-weight="bold">cyDNA sends TO SIEM:</text>
+  <text x="1030" y="885" class="component-text">• Malware family classification ("Emotet variant")</text>
+  <text x="1030" y="905" class="component-text">• Confidence score (98% match)</text>
+  <text x="1030" y="925" class="component-text">• APT attribution (APT29)</text>
+  <text x="1030" y="945" class="component-text">• IOCs (hashes, YARA rules)</text>
+  <text x="1030" y="965" class="component-text">• Behavioral DNA patterns</text>
+
+  <text x="1350" y="1000" text-anchor="middle" class="component-text" font-weight="bold">SIEM correlates cyDNA alerts with:</text>
+  <text x="1030" y="1025" class="component-text">→ User activity logs (Who was affected?)</text>
+  <text x="1030" y="1045" class="component-text">→ Network traffic (Where did it spread?)</text>
+  <text x="1030" y="1065" class="component-text">→ Email logs (How did it arrive?)</text>
+  <text x="1030" y="1085" class="component-text">→ Asset data (What's the business impact?)</text>
+
+  <text x="1350" y="1125" text-anchor="middle" class="highlight-text" fill="#d68910">= Complete Incident Context!</text>
+
+  <!-- SIEM to SOC -->
+  <rect x="1010" y="1010" width="680" height="160" fill="#fff" opacity="0.9" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="1350" y="1040" text-anchor="middle" class="component-title">SIEM Output to SOC Team</text>
+  <text x="1030" y="1070" class="component-text" font-weight="bold">Comprehensive Alert:</text>
+  <text x="1030" y="1090" class="component-text">"Emotet infection detected on Finance user workstation"</text>
+  <text x="1030" y="1110" class="component-text">• Malware DNA: 98% match to Emotet (from cyDNA)</text>
+  <text x="1030" y="1130" class="component-text">• Arrived via: Phishing email at 10:23 AM (from email gateway)</text>
+  <text x="1030" y="1150" class="component-text">• User: john.doe, Finance Dept (from AD + asset DB)</text>
+  <text x="1030" y="1160" class="component-text">• C2 communication established (from firewall logs)</text>
+
+  <!-- ============================================ -->
+  <!-- Bottom Comparison -->
+  <!-- ============================================ -->
+  <rect x="50" y="1360" width="1700" height="320" fill="#f8f9fa" stroke="#34495e" stroke-width="3" rx="10"/>
+  <text x="900" y="1400" text-anchor="middle" class="section-title">Key Differences: cyDNA Universe vs SIEM Universe</text>
+
+  <!-- cyDNA Column -->
+  <rect x="80" y="1420" width="550" height="240" fill="#fff" stroke="#9b59b6" stroke-width="3" rx="5"/>
+  <text x="355" y="1450" text-anchor="middle" class="component-title" fill="#9b59b6">cyDNA UNIVERSE</text>
+  <text x="100" y="1480" class="component-text" font-weight="bold">Paradigm:</text>
+  <text x="200" y="1480" class="component-text">Genetic/Behavioral Analysis</text>
+
+  <text x="100" y="1505" class="component-text" font-weight="bold">Primary Question:</text>
+  <text x="250" y="1505" class="component-text">"What IS this thing? What family?"</text>
+
+  <text x="100" y="1530" class="component-text" font-weight="bold">Data Model:</text>
+  <text x="200" y="1530" class="component-text">File DNA, code structure, behavior patterns</text>
+
+  <text x="100" y="1555" class="component-text" font-weight="bold">Analysis Scope:</text>
+  <text x="220" y="1555" class="component-text">Vertical (deep into single entity)</text>
+
+  <text x="100" y="1580" class="component-text" font-weight="bold">Strength:</text>
+  <text x="180" y="1580" class="component-text">Identify unknown variants, zero-days</text>
+
+  <text x="100" y="1605" class="component-text" font-weight="bold">Example Output:</text>
+  <text x="100" y="1625" class="component-text">"File is 98% genetically similar to WannaCry family"</text>
+  <text x="100" y="1645" class="component-text">"Behavioral DNA matches ransomware technique"</text>
+
+  <!-- SIEM Column -->
+  <rect x="650" y="1420" width="550" height="240" fill="#fff" stroke="#e74c3c" stroke-width="3" rx="5"/>
+  <text x="925" y="1450" text-anchor="middle" class="component-title" fill="#e74c3c">SIEM UNIVERSE</text>
+  <text x="670" y="1480" class="component-text" font-weight="bold">Paradigm:</text>
+  <text x="760" y="1480" class="component-text">Event-Based Correlation</text>
+
+  <text x="670" y="1505" class="component-text" font-weight="bold">Primary Question:</text>
+  <text x="830" y="1505" class="component-text">"What's HAPPENING in my infrastructure?"</text>
+
+  <text x="670" y="1530" class="component-text" font-weight="bold">Data Model:</text>
+  <text x="760" y="1530" class="component-text">Log events, time-series data</text>
+
+  <text x="670" y="1555" class="component-text" font-weight="bold">Analysis Scope:</text>
+  <text x="790" y="1555" class="component-text">Horizontal (across all systems)</text>
+
+  <text x="670" y="1580" class="component-text" font-weight="bold">Strength:</text>
+  <text x="750" y="1580" class="component-text">Enterprise visibility, context correlation</text>
+
+  <text x="670" y="1605" class="component-text" font-weight="bold">Example Output:</text>
+  <text x="670" y="1625" class="component-text">"User john.doe logged in from NYC and Moscow in 5 min"</text>
+  <text x="670" y="1645" class="component-text">"Finance user accessed unusual data + external transfer"</text>
+
+  <!-- Relationship Box -->
+  <rect x="1220" y="1420" width="510" height="240" fill="#fff3cd" stroke="#f39c12" stroke-width="3" rx="5"/>
+  <text x="1475" y="1450" text-anchor="middle" class="component-title" fill="#d68910">THE RELATIONSHIP</text>
+
+  <text x="1475" y="1485" text-anchor="middle" class="highlight-text">COMPLEMENTARY</text>
+  <text x="1475" y="1505" text-anchor="middle" class="highlight-text">Not Competing!</text>
+
+  <text x="1240" y="1535" class="component-text" font-weight="bold">cyDNA provides:</text>
+  <text x="1240" y="1555" class="component-text">→ WHAT the threat is (DNA, family)</text>
+
+  <text x="1240" y="1585" class="component-text" font-weight="bold">SIEM provides:</text>
+  <text x="1240" y="1605" class="component-text">→ WHERE it is, WHO is affected,</text>
+  <text x="1260" y="1625" class="component-text">HOW it got in, WHAT's the impact</text>
+
+  <rect x="1240" y="1635" width="470" height="15" fill="#d4edda" rx="3"/>
+  <text x="1475" y="1647" text-anchor="middle" class="component-text" font-weight="bold">Together = Complete Threat Detection & Response</text>
+
+  <!-- Bottom Summary -->
+  <rect x="50" y="1720" width="1700" height="240" fill="#fff5f5" stroke="#e74c3c" stroke-width="4" rx="10"/>
+  <text x="900" y="1760" text-anchor="middle" class="highlight-text" font-size="20">ANSWER: cyDNA is Its Own Domain with Its Own Umbrella</text>
+
+  <text x="900" y="1800" text-anchor="middle" class="component-text" font-size="14" font-weight="bold">cyDNA is NOT a subset of SIEM - it's a parallel security universe!</text>
+
+  <rect x="80" y="1820" width="520" height="120" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="5"/>
+  <text x="340" y="1845" text-anchor="middle" class="component-title" fill="#9b59b6">cyDNA Umbrella Includes:</text>
+  <text x="100" y="1870" class="component-text">✓ File analysis platforms (Intezer, VirusTotal)</text>
+  <text x="100" y="1890" class="component-text">✓ Behavioral DNA engines (CrowdStrike IOAs)</text>
+  <text x="100" y="1910" class="component-text">✓ Sandboxes, reverse engineering tools</text>
+  <text x="100" y="1930" class="component-text">✓ Code similarity, fuzzy hashing tools</text>
+
+  <rect x="620" y="1820" width="520" height="120" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="5"/>
+  <text x="880" y="1845" text-anchor="middle" class="component-title" fill="#e74c3c">SIEM Umbrella Includes:</text>
+  <text x="640" y="1870" class="component-text">✓ Log aggregation & normalization</text>
+  <text x="640" y="1890" class="component-text">✓ Event correlation engines</text>
+  <text x="640" y="1910" class="component-text">✓ UEBA, statistical analytics</text>
+  <text x="640" y="1930" class="component-text">✓ Compliance reporting, dashboards</text>
+
+  <rect x="1160" y="1820" width="570" height="120" fill="#d4edda" stroke="#27ae60" stroke-width="3" rx="5"/>
+  <text x="1445" y="1845" text-anchor="middle" class="component-title" fill="#1e8449">Integration = Best of Both</text>
+  <text x="1180" y="1870" class="component-text">cyDNA discovers and classifies the threat</text>
+  <text x="1180" y="1890" class="component-text">SIEM correlates and provides enterprise context</text>
+  <text x="1180" y="1910" class="component-text">Together they answer: WHAT it is + WHERE/WHO/HOW</text>
+  <text x="1180" y="1930" class="component-text">Result: Comprehensive threat detection & response</text>
+</svg>
