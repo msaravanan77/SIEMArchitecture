@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2200" width="1600" height="2200">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 36px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #fff; }
+      .section-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+      .component-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .component-text { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+      .small-text { font-family: Arial, sans-serif; font-size: 10px; fill: #666; }
+      .highlight-text { font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; fill: #e74c3c; }
+      .year-text { font-family: Arial, sans-serif; font-size: 13px; font-style: italic; fill: #7f8c8d; }
+
+      .level1-box { fill: #ecf0f1; stroke: #95a5a6; stroke-width: 3; }
+      .level2-box { fill: #d5f4e6; stroke: #27ae60; stroke-width: 3; }
+      .level3-box { fill: #fdebd0; stroke: #f39c12; stroke-width: 3; }
+      .level4-box { fill: #ebf5fb; stroke: #3498db; stroke-width: 3; }
+      .level5-box { fill: #f4ecf7; stroke: #9b59b6; stroke-width: 3; }
+
+      .umbrella { fill: #e74c3c; opacity: 0.15; stroke: #c0392b; stroke-width: 4; }
+      .vendor-box { fill: #fff; stroke: #34495e; stroke-width: 2; }
+      .external-box { fill: #fff3cd; stroke: #ff6b6b; stroke-width: 2; stroke-dasharray: 5,5; }
+
+      .arrow { stroke: #3498db; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+      .data-flow { stroke: #e74c3c; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498db" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="800" y="50" text-anchor="middle" class="title">SIEM Intelligence Layers</text>
+  <text x="800" y="80" text-anchor="middle" class="subtitle">From Simple Filters to Sophisticated AI/ML - The Complete Intelligence Spectrum</text>
+
+  <!-- The SIEM Umbrella Visualization -->
+  <path d="M 100 150 Q 800 100 1500 150 L 1500 1400 L 100 1400 Z" class="umbrella"/>
+  <text x="800" y="130" text-anchor="middle" class="highlight-text" font-size="24">THE EXPANDING "SIEM UMBRELLA"</text>
+
+  <!-- Timeline Evolution -->
+  <rect x="1520" y="200" width="60" height="1150" fill="#f8f9fa" stroke="#ddd" stroke-width="2" rx="5"/>
+  <text x="1550" y="250" text-anchor="middle" class="year-text" transform="rotate(90 1550 250)">2000-2010: Basic Rules Only</text>
+  <text x="1550" y="550" text-anchor="middle" class="year-text" transform="rotate(90 1550 550)">2010-2015: Stats Added</text>
+  <text x="1550" y="800" text-anchor="middle" class="year-text" transform="rotate(90 1550 800)">2015-2020: UEBA Emerging</text>
+  <text x="1550" y="1050" text-anchor="middle" class="year-text" transform="rotate(90 1550 1050)">2020-2025: AI/ML Native</text>
+  <text x="1550" y="1280" text-anchor="middle" class="year-text" transform="rotate(90 1550 1280)">Future: Autonomous</text>
+
+  <!-- ============================================ -->
+  <!-- LEVEL 1: Rule-Based Correlation -->
+  <!-- ============================================ -->
+  <rect x="150" y="200" width="1300" height="180" class="level1-box" rx="10"/>
+  <text x="180" y="235" class="section-title" fill="#2c3e50">LEVEL 1: Rule-Based Correlation (Traditional SIEM)</text>
+  <text x="1400" y="235" text-anchor="end" class="year-text">Since 2000</text>
+
+  <rect x="180" y="250" width="280" height="110" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="320" y="275" text-anchor="middle" class="component-title">Boolean Logic</text>
+  <text x="320" y="295" text-anchor="middle" class="component-text">IF-THEN-ELSE rules</text>
+  <text x="320" y="310" text-anchor="middle" class="component-text">Pattern matching (regex)</text>
+  <text x="320" y="325" text-anchor="middle" class="component-text">Example: IF failed_logins > 5</text>
+  <text x="320" y="340" text-anchor="middle" class="component-text">THEN alert "Brute Force"</text>
+
+  <rect x="480" y="250" width="280" height="110" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="620" y="275" text-anchor="middle" class="component-title">Time-Windowed Correlation</text>
+  <text x="620" y="295" text-anchor="middle" class="component-text">Multi-event chaining</text>
+  <text x="620" y="310" text-anchor="middle" class="component-text">Sequence detection</text>
+  <text x="620" y="325" text-anchor="middle" class="component-text">Example: Event A + Event B</text>
+  <text x="620" y="340" text-anchor="middle" class="component-text">within 10 minutes = Alert</text>
+
+  <rect x="780" y="250" width="280" height="110" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="920" y="275" text-anchor="middle" class="component-title">Threshold-Based</text>
+  <text x="920" y="295" text-anchor="middle" class="component-text">Simple counting</text>
+  <text x="920" y="310" text-anchor="middle" class="component-text">Static thresholds</text>
+  <text x="920" y="325" text-anchor="middle" class="component-text">Example: Downloads > 1000</text>
+  <text x="920" y="340" text-anchor="middle" class="component-text">files = Alert</text>
+
+  <rect x="1080" y="250" width="340" height="110" fill="#fff" stroke="#95a5a6" stroke-width="2" rx="5"/>
+  <text x="1250" y="275" text-anchor="middle" class="component-title">Status: ✓ ALWAYS in SIEM</text>
+  <text x="1250" y="295" text-anchor="middle" class="component-text">• Universal - every SIEM has this</text>
+  <text x="1250" y="310" text-anchor="middle" class="component-text">• Foundation of all detection</text>
+  <text x="1250" y="325" text-anchor="middle" class="component-text">• Fast, deterministic</text>
+  <text x="1250" y="340" text-anchor="middle" class="component-text">• High false positives</text>
+  <text x="1250" y="355" text-anchor="middle" class="component-text">• Detects: Known patterns only</text>
+
+  <!-- ============================================ -->
+  <!-- LEVEL 2: Statistical Analysis -->
+  <!-- ============================================ -->
+  <rect x="150" y="410" width="1300" height="180" class="level2-box" rx="10"/>
+  <text x="180" y="445" class="section-title" fill="#1e8449">LEVEL 2: Statistical Analytics Engine</text>
+  <text x="1400" y="445" text-anchor="end" class="year-text">Since 2010</text>
+
+  <rect x="180" y="460" width="280" height="110" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="320" y="485" text-anchor="middle" class="component-title">Baselines & Deviations</text>
+  <text x="320" y="505" text-anchor="middle" class="component-text">Mean, median, std deviation</text>
+  <text x="320" y="520" text-anchor="middle" class="component-text">Moving averages</text>
+  <text x="320" y="535" text-anchor="middle" class="component-text">Example: Traffic > 3 standard</text>
+  <text x="320" y="550" text-anchor="middle" class="component-text">deviations from baseline</text>
+
+  <rect x="480" y="460" width="280" height="110" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="620" y="485" text-anchor="middle" class="component-title">Time-Series Analysis</text>
+  <text x="620" y="505" text-anchor="middle" class="component-text">Trend detection</text>
+  <text x="620" y="520" text-anchor="middle" class="component-text">Seasonality patterns</text>
+  <text x="620" y="535" text-anchor="middle" class="component-text">Example: Login spike unusual</text>
+  <text x="620" y="550" text-anchor="middle" class="component-text">for this time of day</text>
+
+  <rect x="780" y="460" width="280" height="110" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="920" y="485" text-anchor="middle" class="component-title">Outlier Detection</text>
+  <text x="920" y="505" text-anchor="middle" class="component-text">Z-score, IQR methods</text>
+  <text x="920" y="520" text-anchor="middle" class="component-text">Frequency analysis</text>
+  <text x="920" y="535" text-anchor="middle" class="component-text">Example: User downloads 10x</text>
+  <text x="920" y="550" text-anchor="middle" class="component-text">more than typical</text>
+
+  <rect x="1080" y="460" width="340" height="110" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="1250" y="485" text-anchor="middle" class="component-title">Status: ✓ ALWAYS in SIEM</text>
+  <text x="1250" y="505" text-anchor="middle" class="component-text">• Core SIEM functionality</text>
+  <text x="1250" y="520" text-anchor="middle" class="component-text">• Better than static rules</text>
+  <text x="1250" y="535" text-anchor="middle" class="component-text">• Adapts to baselines</text>
+  <text x="1250" y="550" text-anchor="middle" class="component-text">• Still rule-driven</text>
+  <text x="1250" y="565" text-anchor="middle" class="component-text">• Detects: Statistical anomalies</text>
+
+  <!-- ============================================ -->
+  <!-- LEVEL 3: Machine Learning / UEBA -->
+  <!-- ============================================ -->
+  <rect x="150" y="620" width="1300" height="200" class="level3-box" rx="10"/>
+  <text x="180" y="655" class="section-title" fill="#d68910">LEVEL 3: Machine Learning / UEBA</text>
+  <text x="1400" y="655" text-anchor="end" class="year-text">2015-2020 Converging</text>
+
+  <rect x="180" y="670" width="250" height="130" fill="#fff" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="305" y="695" text-anchor="middle" class="component-title">Behavioral Baselines</text>
+  <text x="305" y="715" text-anchor="middle" class="component-text">Per-user/entity modeling</text>
+  <text x="305" y="730" text-anchor="middle" class="component-text">Peer group comparison</text>
+  <text x="305" y="745" text-anchor="middle" class="component-text">Unsupervised learning</text>
+  <text x="305" y="760" text-anchor="middle" class="component-text">Example: User behaves</text>
+  <text x="305" y="775" text-anchor="middle" class="component-text">differently than peers</text>
+
+  <rect x="450" y="670" width="250" height="130" fill="#fff" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="575" y="695" text-anchor="middle" class="component-title">Anomaly Detection</text>
+  <text x="575" y="715" text-anchor="middle" class="component-text">Clustering algorithms</text>
+  <text x="575" y="730" text-anchor="middle" class="component-text">K-means, DBSCAN</text>
+  <text x="575" y="745" text-anchor="middle" class="component-text">Isolation forests</text>
+  <text x="575" y="760" text-anchor="middle" class="component-text">Example: Login pattern</text>
+  <text x="575" y="775" text-anchor="middle" class="component-text">never seen before</text>
+
+  <rect x="720" y="670" width="250" height="130" fill="#fff" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="845" y="695" text-anchor="middle" class="component-title">Risk Scoring</text>
+  <text x="845" y="715" text-anchor="middle" class="component-text">ML-based risk calculation</text>
+  <text x="845" y="730" text-anchor="middle" class="component-text">Multi-factor weighting</text>
+  <text x="845" y="745" text-anchor="middle" class="component-text">Dynamic thresholds</text>
+  <text x="845" y="760" text-anchor="middle" class="component-text">Example: Cumulative risk</text>
+  <text x="845" y="775" text-anchor="middle" class="component-text">score over time</text>
+
+  <rect x="990" y="670" width="430" height="130" fill="#fff" stroke="#f39c12" stroke-width="2" rx="5"/>
+  <text x="1205" y="695" text-anchor="middle" class="component-title">Status: ⚡ CONVERGING into SIEM</text>
+  <text x="1205" y="715" text-anchor="middle" class="component-text">Modern SIEMs (2020+): ✓ Integrated</text>
+  <text x="1205" y="730" text-anchor="middle" class="component-text">  • Microsoft Sentinel: Native UEBA</text>
+  <text x="1205" y="745" text-anchor="middle" class="component-text">  • Exabeam: UEBA-first SIEM</text>
+  <text x="1205" y="760" text-anchor="middle" class="component-text">Legacy SIEMs: $ Add-on module</text>
+  <text x="1205" y="775" text-anchor="middle" class="component-text">  • Splunk UEBA, QRadar UBA</text>
+  <text x="1205" y="790" text-anchor="middle" class="component-text">Detects: Unknown threats, insider threats</text>
+
+  <!-- ============================================ -->
+  <!-- LEVEL 4: Deep Learning / Advanced ML -->
+  <!-- ============================================ -->
+  <rect x="150" y="850" width="1300" height="200" class="level4-box" rx="10"/>
+  <text x="180" y="885" class="section-title" fill="#2980b9">LEVEL 4: Deep Learning & Neural Networks</text>
+  <text x="1400" y="885" text-anchor="end" class="year-text">2020+ Emerging</text>
+
+  <rect x="180" y="900" width="250" height="130" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="305" y="925" text-anchor="middle" class="component-title">NLP for Logs</text>
+  <text x="305" y="945" text-anchor="middle" class="component-text">Natural language processing</text>
+  <text x="305" y="960" text-anchor="middle" class="component-text">Semantic log analysis</text>
+  <text x="305" y="975" text-anchor="middle" class="component-text">Context understanding</text>
+  <text x="305" y="990" text-anchor="middle" class="component-text">Example: Understand</text>
+  <text x="305" y="1005" text-anchor="middle" class="component-text">intent from log messages</text>
+
+  <rect x="450" y="900" width="250" height="130" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="575" y="925" text-anchor="middle" class="component-title">Sequence Prediction</text>
+  <text x="575" y="945" text-anchor="middle" class="component-text">RNN, LSTM networks</text>
+  <text x="575" y="960" text-anchor="middle" class="component-text">Attack chain prediction</text>
+  <text x="575" y="975" text-anchor="middle" class="component-text">Next-step forecasting</text>
+  <text x="575" y="990" text-anchor="middle" class="component-text">Example: Predict next</text>
+  <text x="575" y="1005" text-anchor="middle" class="component-text">stage of attack</text>
+
+  <rect x="720" y="900" width="250" height="130" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="845" y="925" text-anchor="middle" class="component-title">Image/Vision Analysis</text>
+  <text x="845" y="945" text-anchor="middle" class="component-text">CNN for phishing detection</text>
+  <text x="845" y="960" text-anchor="middle" class="component-text">Screenshot analysis</text>
+  <text x="845" y="975" text-anchor="middle" class="component-text">Visual threat ID</text>
+  <text x="845" y="990" text-anchor="middle" class="component-text">Example: Detect phishing</text>
+  <text x="845" y="1005" text-anchor="middle" class="component-text">sites by appearance</text>
+
+  <rect x="990" y="900" width="430" height="130" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="1205" y="925" text-anchor="middle" class="component-title">Status: ~ PARTIAL in Modern SIEMs</text>
+  <text x="1205" y="945" text-anchor="middle" class="component-text">Some vendors have this:</text>
+  <text x="1205" y="960" text-anchor="middle" class="component-text">  • Microsoft Sentinel (Azure ML)</text>
+  <text x="1205" y="975" text-anchor="middle" class="component-text">  • Splunk Deep Learning Toolkit</text>
+  <text x="1205" y="990" text-anchor="middle" class="component-text">Many orgs use external:</text>
+  <text x="1205" y="1005" text-anchor="middle" class="component-text">  • Custom TensorFlow/PyTorch models</text>
+  <text x="1205" y="1020" text-anchor="middle" class="component-text">Detects: Complex patterns, zero-days</text>
+
+  <!-- ============================================ -->
+  <!-- LEVEL 5: Proprietary AI / Advanced -->
+  <!-- ============================================ -->
+  <rect x="150" y="1080" width="1300" height="200" class="level5-box" rx="10"/>
+  <text x="180" y="1115" class="section-title" fill="#7d3c98">LEVEL 5: Proprietary AI & Advanced Algorithms</text>
+  <text x="1400" y="1115" text-anchor="end" class="year-text">Vendor-Specific</text>
+
+  <rect x="180" y="1130" width="250" height="130" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="5"/>
+  <text x="305" y="1155" text-anchor="middle" class="component-title">Ensemble Models</text>
+  <text x="305" y="1175" text-anchor="middle" class="component-text">Multiple ML techniques</text>
+  <text x="305" y="1190" text-anchor="middle" class="component-text">Combined predictions</text>
+  <text x="305" y="1205" text-anchor="middle" class="component-text">Voting systems</text>
+  <text x="305" y="1220" text-anchor="middle" class="component-text">Example: 10 models vote</text>
+  <text x="305" y="1235" text-anchor="middle" class="component-text">on threat classification</text>
+
+  <rect x="450" y="1130" width="250" height="130" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="5"/>
+  <text x="575" y="1155" text-anchor="middle" class="component-title">Continuous Learning</text>
+  <text x="575" y="1175" text-anchor="middle" class="component-text">Self-updating models</text>
+  <text x="575" y="1190" text-anchor="middle" class="component-text">Feedback loops</text>
+  <text x="575" y="1205" text-anchor="middle" class="component-text">Adaptive algorithms</text>
+  <text x="575" y="1220" text-anchor="middle" class="component-text">Example: Model improves</text>
+  <text x="575" y="1235" text-anchor="middle" class="component-text">from analyst feedback</text>
+
+  <rect x="720" y="1130" width="250" height="130" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="5"/>
+  <text x="845" y="1155" text-anchor="middle" class="component-title">Genetic/DNA Algorithms</text>
+  <text x="845" y="1175" text-anchor="middle" class="component-text">Behavioral DNA matching</text>
+  <text x="845" y="1190" text-anchor="middle" class="component-text">Pattern genetics</text>
+  <text x="845" y="1205" text-anchor="middle" class="component-text">Variant detection</text>
+  <text x="845" y="1220" text-anchor="middle" class="component-text">Example: Malware family</text>
+  <text x="845" y="1235" text-anchor="middle" class="component-text">identification by "genes"</text>
+
+  <rect x="990" y="1130" width="430" height="130" fill="#fff" stroke="#9b59b6" stroke-width="2" rx="5"/>
+  <text x="1205" y="1155" text-anchor="middle" class="component-title">Status: ~ MIXED (Vendor-Specific)</text>
+  <text x="1205" y="1175" text-anchor="middle" class="component-text">In SIEM (proprietary):</text>
+  <text x="1205" y="1190" text-anchor="middle" class="component-text">  • Securonix "Autonomous Threat Sweeper"</text>
+  <text x="1205" y="1205" text-anchor="middle" class="component-text">  • IBM Watson for Cyber Security</text>
+  <text x="1205" y="1220" text-anchor="middle" class="component-text">External Platforms:</text>
+  <text x="1205" y="1235" text-anchor="middle" class="component-text">  • Darktrace "Enterprise Immune System"</text>
+  <text x="1205" y="1250" text-anchor="middle" class="component-text">Detects: APTs, sophisticated threats</text>
+
+  <!-- ============================================ -->
+  <!-- OUTSIDE SIEM UMBRELLA -->
+  <!-- ============================================ -->
+  <rect x="150" y="1310" width="1300" height="140" class="external-box" rx="10"/>
+  <text x="180" y="1345" class="section-title" fill="#c0392b">OUTSIDE SIEM: Specialized Processors (Send Alerts TO SIEM)</text>
+
+  <rect x="180" y="1360" width="220" height="70" fill="#fff3cd" stroke="#ff6b6b" stroke-width="2" rx="5"/>
+  <text x="290" y="1385" text-anchor="middle" class="component-title">cyDNA Engines</text>
+  <text x="290" y="1405" text-anchor="middle" class="small-text">In: EDR platforms</text>
+  <text x="290" y="1420" text-anchor="middle" class="small-text">CrowdStrike, Intezer</text>
+
+  <rect x="420" y="1360" width="220" height="70" fill="#fff3cd" stroke="#ff6b6b" stroke-width="2" rx="5"/>
+  <text x="530" y="1385" text-anchor="middle" class="component-title">Malware Sandboxes</text>
+  <text x="530" y="1405" text-anchor="middle" class="small-text">Behavioral analysis</text>
+  <text x="530" y="1420" text-anchor="middle" class="small-text">Cuckoo, FireEye</text>
+
+  <rect x="660" y="1360" width="220" height="70" fill="#fff3cd" stroke="#ff6b6b" stroke-width="2" rx="5"/>
+  <text x="770" y="1385" text-anchor="middle" class="component-title">Specialized AI</text>
+  <text x="770" y="1405" text-anchor="middle" class="small-text">Darktrace, Vectra</text>
+  <text x="770" y="1420" text-anchor="middle" class="small-text">Standalone platforms</text>
+
+  <rect x="900" y="1360" width="220" height="70" fill="#fff3cd" stroke="#ff6b6b" stroke-width="2" rx="5"/>
+  <text x="1010" y="1385" text-anchor="middle" class="component-title">Deception Tech</text>
+  <text x="1010" y="1405" text-anchor="middle" class="small-text">Honeypots, canaries</text>
+  <text x="1010" y="1420" text-anchor="middle" class="small-text">Attivo, Illusive</text>
+
+  <rect x="1140" y="1360" width="280" height="70" fill="#fff3cd" stroke="#ff6b6b" stroke-width="2" rx="5"/>
+  <text x="1280" y="1385" text-anchor="middle" class="component-title">These SEND to SIEM</text>
+  <text x="1280" y="1405" text-anchor="middle" class="small-text">Not part of SIEM umbrella</text>
+  <text x="1280" y="1420" text-anchor="middle" class="small-text">But SIEM correlates their alerts</text>
+
+  <!-- Arrows showing external tools feeding SIEM -->
+  <path d="M 290 1310 L 400 1280" class="data-flow"/>
+  <path d="M 530 1310 L 500 1280" class="data-flow"/>
+  <path d="M 770 1310 L 600 1280" class="data-flow"/>
+  <path d="M 1010 1310 L 700 1280" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- VENDOR COMPARISON -->
+  <!-- ============================================ -->
+  <rect x="50" y="1480" width="1500" height="320" fill="#f8f9fa" stroke="#95a5a6" stroke-width="2" rx="8"/>
+  <text x="800" y="1515" text-anchor="middle" class="section-title">Vendor Approaches: What's Under the SIEM Umbrella?</text>
+
+  <!-- Microsoft Sentinel -->
+  <rect x="80" y="1540" width="280" height="240" class="vendor-box" rx="5"/>
+  <text x="220" y="1565" text-anchor="middle" class="component-title" fill="#0078d4">Microsoft Sentinel</text>
+  <text x="220" y="1585" text-anchor="middle" class="small-text">Cloud-Native, AI-First</text>
+  <text x="100" y="1610" class="small-text">✓ Level 1: Rules (built-in)</text>
+  <text x="100" y="1630" class="small-text">✓ Level 2: Stats (built-in)</text>
+  <text x="100" y="1650" class="small-text">✓ Level 3: UEBA (native)</text>
+  <text x="100" y="1670" class="small-text">✓ Level 4: Deep Learning (Azure ML)</text>
+  <text x="100" y="1690" class="small-text">✓ Level 5: Fusion ML</text>
+  <rect x="100" y="1705" width="240" height="60" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="3"/>
+  <text x="220" y="1730" text-anchor="middle" class="component-text" font-weight="bold">All Intelligence</text>
+  <text x="220" y="1745" text-anchor="middle" class="component-text" font-weight="bold">UNDER UMBRELLA</text>
+  <text x="220" y="1760" text-anchor="middle" class="small-text">No extra purchase needed</text>
+
+  <!-- Splunk ES -->
+  <rect x="380" y="1540" width="280" height="240" class="vendor-box" rx="5"/>
+  <text x="520" y="1565" text-anchor="middle" class="component-title" fill="#ff6600">Splunk Enterprise Security</text>
+  <text x="520" y="1585" text-anchor="middle" class="small-text">Modular Approach</text>
+  <text x="400" y="1610" class="small-text">✓ Level 1: Rules (core)</text>
+  <text x="400" y="1630" class="small-text">✓ Level 2: Stats (core)</text>
+  <text x="400" y="1650" class="small-text">$ Level 3: UEBA (add-on)</text>
+  <text x="400" y="1670" class="small-text">$ Level 4: DL Toolkit (add-on)</text>
+  <text x="400" y="1690" class="small-text">~ Level 5: Custom</text>
+  <rect x="400" y="1705" width="240" height="60" fill="#fff3cd" stroke="#ffc107" stroke-width="2" rx="3"/>
+  <text x="520" y="1730" text-anchor="middle" class="component-text" font-weight="bold">Core + Optional</text>
+  <text x="520" y="1745" text-anchor="middle" class="component-text" font-weight="bold">Modules</text>
+  <text x="520" y="1760" text-anchor="middle" class="small-text">Pay for advanced features</text>
+
+  <!-- IBM QRadar -->
+  <rect x="680" y="1540" width="280" height="240" class="vendor-box" rx="5"/>
+  <text x="820" y="1565" text-anchor="middle" class="component-title" fill="#0f62fe">IBM QRadar</text>
+  <text x="820" y="1585" text-anchor="middle" class="small-text">Traditional + AI Add-ons</text>
+  <text x="700" y="1610" class="small-text">✓ Level 1: Rules (robust)</text>
+  <text x="700" y="1630" class="small-text">✓ Level 2: Stats (core)</text>
+  <text x="700" y="1650" class="small-text">$ Level 3: QRadar UBA</text>
+  <text x="700" y="1670" class="small-text">$ Level 4: Watson AI</text>
+  <text x="700" y="1690" class="small-text">$ Level 5: Watson modules</text>
+  <rect x="700" y="1705" width="240" height="60" fill="#fff3cd" stroke="#ffc107" stroke-width="2" rx="3"/>
+  <text x="820" y="1730" text-anchor="middle" class="component-text" font-weight="bold">Strong Core</text>
+  <text x="820" y="1745" text-anchor="middle" class="component-text" font-weight="bold">+ AI Modules</text>
+  <text x="820" y="1760" text-anchor="middle" class="small-text">Enterprise-grade options</text>
+
+  <!-- Exabeam -->
+  <rect x="980" y="1540" width="280" height="240" class="vendor-box" rx="5"/>
+  <text x="1120" y="1565" text-anchor="middle" class="component-title" fill="#00a3e0">Exabeam Fusion</text>
+  <text x="1120" y="1585" text-anchor="middle" class="small-text">UEBA-First, Now Full SIEM</text>
+  <text x="1000" y="1610" class="small-text">✓ Level 1: Rules (added later)</text>
+  <text x="1000" y="1630" class="small-text">✓ Level 2: Stats (built-in)</text>
+  <text x="1000" y="1650" class="small-text">✓ Level 3: UEBA (CORE DNA)</text>
+  <text x="1000" y="1670" class="small-text">✓ Level 4: ML models</text>
+  <text x="1000" y="1690" class="small-text">✓ Level 5: Advanced analytics</text>
+  <rect x="1000" y="1705" width="240" height="60" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="3"/>
+  <text x="1120" y="1730" text-anchor="middle" class="component-text" font-weight="bold">ML-Native</text>
+  <text x="1120" y="1745" text-anchor="middle" class="component-text" font-weight="bold">All Integrated</text>
+  <text x="1120" y="1760" text-anchor="middle" class="small-text">Started as UEBA platform</text>
+
+  <!-- Elastic -->
+  <rect x="1280" y="1540" width="260" height="240" class="vendor-box" rx="5"/>
+  <text x="1410" y="1565" text-anchor="middle" class="component-title" fill="#00bfb3">Elastic Security</text>
+  <text x="1410" y="1585" text-anchor="middle" class="small-text">Open Source + DIY</text>
+  <text x="1300" y="1610" class="small-text">✓ Level 1: Rules (free)</text>
+  <text x="1300" y="1630" class="small-text">✓ Level 2: Stats (free)</text>
+  <text x="1300" y="1650" class="small-text">$ Level 3: ML (paid tier)</text>
+  <text x="1300" y="1670" class="small-text">○ Level 4: DIY (custom)</text>
+  <text x="1300" y="1690" class="small-text">○ Level 5: DIY (custom)</text>
+  <rect x="1300" y="1705" width="220" height="60" fill="#e7f3ff" stroke="#0078d4" stroke-width="2" rx="3"/>
+  <text x="1410" y="1730" text-anchor="middle" class="component-text" font-weight="bold">Flexible Platform</text>
+  <text x="1410" y="1745" text-anchor="middle" class="component-text" font-weight="bold">Build Your Own</text>
+  <text x="1410" y="1760" text-anchor="middle" class="small-text">Open source approach</text>
+
+  <!-- ============================================ -->
+  <!-- SUMMARY -->
+  <!-- ============================================ -->
+  <rect x="50" y="1830" width="1500" height="340" fill="#fff5f5" stroke="#e74c3c" stroke-width="3" rx="10"/>
+  <text x="800" y="1870" text-anchor="middle" class="highlight-text" font-size="22">KEY INSIGHTS: What's Under the SIEM Umbrella?</text>
+
+  <!-- The expanding umbrella visual -->
+  <rect x="80" y="1890" width="450" height="260" fill="#fff" stroke="#34495e" stroke-width="2" rx="5"/>
+  <text x="305" y="1915" text-anchor="middle" class="component-title" fill="#c0392b">HISTORICAL (2000-2015)</text>
+  <rect x="100" y="1930" width="410" height="40" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="3"/>
+  <text x="305" y="1955" text-anchor="middle" class="component-text">SIEM = Levels 1-2 ONLY</text>
+  <text x="305" y="1985" text-anchor="middle" class="small-text">Everything else was EXTERNAL:</text>
+  <text x="305" y="2005" text-anchor="middle" class="small-text">• UEBA: Separate product (Exabeam, Securonix)</text>
+  <text x="305" y="2025" text-anchor="middle" class="small-text">• ML/AI: Custom scripts only</text>
+  <text x="305" y="2045" text-anchor="middle" class="small-text">• Threat Intel: External feeds</text>
+  <text x="305" y="2070" text-anchor="middle" class="component-text" font-weight="bold">SIEM Umbrella: SMALL</text>
+  <path d="M 150 2090 Q 305 2070 460 2090" stroke="#c0392b" stroke-width="3" fill="none"/>
+
+  <rect x="560" y="1890" width="450" height="260" fill="#fff" stroke="#34495e" stroke-width="2" rx="5"/>
+  <text x="785" y="1915" text-anchor="middle" class="component-title" fill="#27ae60">MODERN (2020-2025)</text>
+  <rect x="580" y="1930" width="410" height="60" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="3"/>
+  <text x="785" y="1955" text-anchor="middle" class="component-text" font-weight="bold">SIEM = Levels 1-4 (Sometimes 5)</text>
+  <text x="785" y="1980" text-anchor="middle" class="component-text">Intelligence CONVERGING into SIEM</text>
+  <text x="785" y="2010" text-anchor="middle" class="small-text">NOW INTEGRATED (often):</text>
+  <text x="785" y="2030" text-anchor="middle" class="small-text">✓ UEBA: Built-in or standard module</text>
+  <text x="785" y="2050" text-anchor="middle" class="small-text">✓ ML/AI: Native capabilities</text>
+  <text x="785" y="2070" text-anchor="middle" class="small-text">✓ Threat Intel: Integrated platform</text>
+  <text x="785" y="2095" text-anchor="middle" class="component-text" font-weight="bold">SIEM Umbrella: EXPANDING!</text>
+  <path d="M 580 2120 Q 785 2080 990 2120" stroke="#27ae60" stroke-width="4" fill="none"/>
+  <path d="M 580 2140 Q 785 2090 990 2140" stroke="#27ae60" stroke-width="4" fill="none"/>
+
+  <rect x="1040" y="1890" width="480" height="260" fill="#fff" stroke="#34495e" stroke-width="2" rx="5"/>
+  <text x="1280" y="1915" text-anchor="middle" class="component-title" fill="#2980b9">THE ANSWER</text>
+  <text x="1280" y="1945" text-anchor="middle" class="component-text" font-weight="bold">YES - From dump filters to sophisticated AI/ML</text>
+  <text x="1280" y="1965" text-anchor="middle" class="component-text" font-weight="bold">ARE falling under the SIEM umbrella!</text>
+
+  <text x="1280" y="1995" text-anchor="middle" class="small-text" font-weight="bold">BUT with nuances:</text>
+  <text x="1280" y="2015" text-anchor="middle" class="small-text">• Levels 1-2: Always in SIEM (universal)</text>
+  <text x="1280" y="2035" text-anchor="middle" class="small-text">• Level 3 (UEBA): Converging into SIEM</text>
+  <text x="1280" y="2055" text-anchor="middle" class="small-text">• Level 4 (Deep Learning): Partial integration</text>
+  <text x="1280" y="2075" text-anchor="middle" class="small-text">• Level 5 (Advanced AI): Vendor-dependent</text>
+  <text x="1280" y="2095" text-anchor="middle" class="small-text">• Specialized (cyDNA, sandboxes): Still external</text>
+
+  <rect x="1060" y="2110" width="440" height="30" fill="#d4edda" stroke="#28a745" stroke-width="2" rx="3"/>
+  <text x="1280" y="2130" text-anchor="middle" class="component-text" font-weight="bold">Trend: SIEM becoming unified intelligence platform</text>
+
+  <!-- Bottom note -->
+  <text x="800" y="2180" text-anchor="middle" class="label-text" font-style="italic">Modern SIEM = Comprehensive security analytics platform with multi-level intelligence (rules + stats + ML + AI)</text>
+</svg>
