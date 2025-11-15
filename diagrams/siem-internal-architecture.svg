@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1800" width="1400" height="1800">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #fff; }
+      .component-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .component-text { font-family: Arial, sans-serif; font-size: 11px; fill: #555; }
+      .label-text { font-family: Arial, sans-serif; font-size: 12px; fill: #444; }
+      .flow-text { font-family: Arial, sans-serif; font-size: 10px; fill: #0066cc; font-weight: bold; }
+
+      .layer-1 { fill: #2c3e50; }
+      .layer-2 { fill: #34495e; }
+      .layer-3 { fill: #7f8c8d; }
+      .layer-4 { fill: #e74c3c; }
+      .layer-5 { fill: #e67e22; }
+      .layer-6 { fill: #27ae60; }
+      .layer-7 { fill: #3498db; }
+      .layer-8 { fill: #9b59b6; }
+
+      .component-box { fill: #fff; stroke: #ddd; stroke-width: 2; rx: 5; }
+      .data-source { fill: #ecf0f1; stroke: #95a5a6; stroke-width: 2; rx: 5; }
+      .output-box { fill: #d5f4e6; stroke: #27ae60; stroke-width: 2; rx: 5; }
+
+      .arrow { stroke: #0066cc; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .data-flow { stroke: #e74c3c; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead-red); }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0066cc" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#e74c3c" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" class="title">SIEM Internal Architecture</text>
+  <text x="700" y="65" text-anchor="middle" class="subtitle">End-to-End Data Flow and Component Breakdown</text>
+
+  <!-- Layer 1: Data Sources -->
+  <rect x="50" y="100" width="1300" height="140" class="layer-1" rx="8"/>
+  <text x="70" y="130" class="layer-title">Layer 1: Data Sources (Events Origin)</text>
+
+  <!-- Data Source Boxes -->
+  <rect x="70" y="145" width="150" height="80" class="data-source"/>
+  <text x="145" y="165" text-anchor="middle" class="component-title">Network Devices</text>
+  <text x="145" y="180" text-anchor="middle" class="component-text">• Firewalls</text>
+  <text x="145" y="195" text-anchor="middle" class="component-text">• IDS/IPS</text>
+  <text x="145" y="210" text-anchor="middle" class="component-text">• Routers/Switches</text>
+
+  <rect x="240" y="145" width="150" height="80" class="data-source"/>
+  <text x="315" y="165" text-anchor="middle" class="component-title">Endpoints</text>
+  <text x="315" y="180" text-anchor="middle" class="component-text">• Windows/Linux</text>
+  <text x="315" y="195" text-anchor="middle" class="component-text">• EDR (CrowdStrike)</text>
+  <text x="315" y="210" text-anchor="middle" class="component-text">• Antivirus</text>
+
+  <rect x="410" y="145" width="150" height="80" class="data-source"/>
+  <text x="485" y="165" text-anchor="middle" class="component-title">Cloud Platforms</text>
+  <text x="485" y="180" text-anchor="middle" class="component-text">• AWS CloudTrail</text>
+  <text x="485" y="195" text-anchor="middle" class="component-text">• Azure Monitor</text>
+  <text x="485" y="210" text-anchor="middle" class="component-text">• GCP Logging</text>
+
+  <rect x="580" y="145" width="150" height="80" class="data-source"/>
+  <text x="655" y="165" text-anchor="middle" class="component-title">Applications</text>
+  <text x="655" y="180" text-anchor="middle" class="component-text">• Web Servers</text>
+  <text x="655" y="195" text-anchor="middle" class="component-text">• Databases</text>
+  <text x="655" y="210" text-anchor="middle" class="component-text">• Business Apps</text>
+
+  <rect x="750" y="145" width="150" height="80" class="data-source"/>
+  <text x="825" y="165" text-anchor="middle" class="component-title">Identity Systems</text>
+  <text x="825" y="180" text-anchor="middle" class="component-text">• Active Directory</text>
+  <text x="825" y="195" text-anchor="middle" class="component-text">• SSO/SAML</text>
+  <text x="825" y="210" text-anchor="middle" class="component-text">• IAM</text>
+
+  <rect x="920" y="145" width="150" height="80" class="data-source"/>
+  <text x="995" y="165" text-anchor="middle" class="component-title">Security Tools</text>
+  <text x="995" y="180" text-anchor="middle" class="component-text">• DLP</text>
+  <text x="995" y="195" text-anchor="middle" class="component-text">• CASB</text>
+  <text x="995" y="210" text-anchor="middle" class="component-text">• Email Gateway</text>
+
+  <rect x="1090" y="145" width="150" height="80" class="data-source"/>
+  <text x="1165" y="165" text-anchor="middle" class="component-title">Other Sources</text>
+  <text x="1165" y="180" text-anchor="middle" class="component-text">• IoT Devices</text>
+  <text x="1165" y="195" text-anchor="middle" class="component-text">• OT Systems</text>
+  <text x="1165" y="210" text-anchor="middle" class="component-text">• Physical Security</text>
+
+  <!-- Arrows from Data Sources to Collection Layer -->
+  <path d="M 145 225 L 145 270" class="arrow"/>
+  <path d="M 315 225 L 315 270" class="arrow"/>
+  <path d="M 485 225 L 485 270" class="arrow"/>
+  <path d="M 655 225 L 655 270" class="arrow"/>
+  <path d="M 825 225 L 825 270" class="arrow"/>
+  <path d="M 995 225 L 995 270" class="arrow"/>
+  <path d="M 1165 225 L 1165 270" class="arrow"/>
+
+  <!-- Layer 2: Data Collection -->
+  <rect x="50" y="270" width="1300" height="120" class="layer-2" rx="8"/>
+  <text x="70" y="300" class="layer-title">Layer 2: Data Collection &amp; Ingestion</text>
+
+  <rect x="100" y="315" width="200" height="60" class="component-box"/>
+  <text x="200" y="335" text-anchor="middle" class="component-title">Agents</text>
+  <text x="200" y="350" text-anchor="middle" class="component-text">Installed on endpoints</text>
+  <text x="200" y="365" text-anchor="middle" class="component-text">Real-time log forwarding</text>
+
+  <rect x="330" y="315" width="200" height="60" class="component-box"/>
+  <text x="430" y="335" text-anchor="middle" class="component-title">Syslog Listeners</text>
+  <text x="430" y="350" text-anchor="middle" class="component-text">UDP/TCP 514, 6514</text>
+  <text x="430" y="365" text-anchor="middle" class="component-text">CEF, LEEF, RFC5424</text>
+
+  <rect x="560" y="315" width="200" height="60" class="component-box"/>
+  <text x="660" y="335" text-anchor="middle" class="component-title">API Collectors</text>
+  <text x="660" y="350" text-anchor="middle" class="component-text">Cloud APIs, REST</text>
+  <text x="660" y="365" text-anchor="middle" class="component-text">Polling/Webhooks</text>
+
+  <rect x="790" y="315" width="200" height="60" class="component-box"/>
+  <text x="890" y="335" text-anchor="middle" class="component-title">File Collectors</text>
+  <text x="890" y="350" text-anchor="middle" class="component-text">Log file monitoring</text>
+  <text x="890" y="365" text-anchor="middle" class="component-text">Batch uploads</text>
+
+  <rect x="1020" y="315" width="200" height="60" class="component-box"/>
+  <text x="1120" y="335" text-anchor="middle" class="component-title">Network Listeners</text>
+  <text x="1120" y="350" text-anchor="middle" class="component-text">NetFlow, SNMP</text>
+  <text x="1120" y="365" text-anchor="middle" class="component-text">Packet captures</text>
+
+  <!-- Volume indicator -->
+  <text x="700" y="405" text-anchor="middle" class="flow-text">Data Volume: 10,000,000 events/day</text>
+
+  <!-- Arrow to Normalization -->
+  <path d="M 700 390 L 700 430" class="arrow"/>
+
+  <!-- Layer 3: Normalization & Enrichment -->
+  <rect x="50" y="430" width="1300" height="140" class="layer-3" rx="8"/>
+  <text x="70" y="460" class="layer-title">Layer 3: Normalization, Parsing &amp; Enrichment</text>
+
+  <rect x="100" y="475" width="250" height="80" class="component-box"/>
+  <text x="225" y="495" text-anchor="middle" class="component-title">Data Parsing</text>
+  <text x="225" y="510" text-anchor="middle" class="component-text">• Parse raw logs (regex, grok)</text>
+  <text x="225" y="525" text-anchor="middle" class="component-text">• Extract fields (IP, user, time)</text>
+  <text x="225" y="540" text-anchor="middle" class="component-text">• Handle multiple formats</text>
+
+  <rect x="380" y="475" width="250" height="80" class="component-box"/>
+  <text x="505" y="495" text-anchor="middle" class="component-title">Field Normalization</text>
+  <text x="505" y="510" text-anchor="middle" class="component-text">• Map to common schema</text>
+  <text x="505" y="525" text-anchor="middle" class="component-text">• src_ip, dest_ip, user, action</text>
+  <text x="505" y="540" text-anchor="middle" class="component-text">• Timestamp normalization (UTC)</text>
+
+  <rect x="660" y="475" width="250" height="80" class="component-box"/>
+  <text x="785" y="495" text-anchor="middle" class="component-title">Data Enrichment</text>
+  <text x="785" y="510" text-anchor="middle" class="component-text">• GeoIP lookup</text>
+  <text x="785" y="525" text-anchor="middle" class="component-text">• Asset database context</text>
+  <text x="785" y="540" text-anchor="middle" class="component-text">• User directory lookup</text>
+
+  <rect x="940" y="475" width="250" height="80" class="component-box"/>
+  <text x="1065" y="495" text-anchor="middle" class="component-title">Data Quality</text>
+  <text x="1065" y="510" text-anchor="middle" class="component-text">• Validation &amp; cleaning</text>
+  <text x="1065" y="525" text-anchor="middle" class="component-text">• Deduplication</text>
+  <text x="1065" y="540" text-anchor="middle" class="component-text">• Error handling</text>
+
+  <!-- Arrow to Storage -->
+  <path d="M 700 570 L 700 610" class="arrow"/>
+
+  <!-- Layer 4: Storage -->
+  <rect x="50" y="610" width="1300" height="120" class="layer-4" rx="8"/>
+  <text x="70" y="640" class="layer-title">Layer 4: Data Storage &amp; Indexing</text>
+
+  <rect x="150" y="655" width="300" height="60" class="component-box"/>
+  <text x="300" y="675" text-anchor="middle" class="component-title">Hot Storage (Real-time)</text>
+  <text x="300" y="690" text-anchor="middle" class="component-text">Last 30-90 days | Fast SSD/Memory</text>
+  <text x="300" y="705" text-anchor="middle" class="component-text">Elasticsearch, PostgreSQL, Proprietary</text>
+
+  <rect x="480" y="655" width="300" height="60" class="component-box"/>
+  <text x="630" y="675" text-anchor="middle" class="component-title">Warm Storage (Historical)</text>
+  <text x="630" y="690" text-anchor="middle" class="component-text">3-12 months | Compressed</text>
+  <text x="630" y="705" text-anchor="middle" class="component-text">HDFS, S3, Azure Blob</text>
+
+  <rect x="810" y="655" width="300" height="60" class="component-box"/>
+  <text x="960" y="675" text-anchor="middle" class="component-title">Cold Storage (Archive)</text>
+  <text x="960" y="690" text-anchor="middle" class="component-text">1-7 years | Compliance</text>
+  <text x="960" y="705" text-anchor="middle" class="component-text">Glacier, Tape, Long-term Object Storage</text>
+
+  <!-- Bidirectional arrow between Storage and Correlation -->
+  <path d="M 700 730 L 700 780" class="arrow"/>
+  <path d="M 720 780 L 720 730" class="arrow"/>
+
+  <!-- Layer 5: Correlation & Analytics Engine -->
+  <rect x="50" y="780" width="1300" height="160" class="layer-5" rx="8"/>
+  <text x="70" y="810" class="layer-title">Layer 5: Correlation Engine &amp; Analytics (The Brain)</text>
+
+  <rect x="80" y="825" width="250" height="100" class="component-box"/>
+  <text x="205" y="845" text-anchor="middle" class="component-title">Rule-Based Correlation</text>
+  <text x="205" y="860" text-anchor="middle" class="component-text">• Conditional logic (IF-THEN)</text>
+  <text x="205" y="875" text-anchor="middle" class="component-text">• Multi-event correlation</text>
+  <text x="205" y="890" text-anchor="middle" class="component-text">• Time windows</text>
+  <text x="205" y="905" text-anchor="middle" class="component-text">Example: 5 failed logins → Alert</text>
+
+  <rect x="360" y="825" width="250" height="100" class="component-box"/>
+  <text x="485" y="845" text-anchor="middle" class="component-title">UEBA (Behavioral Analytics)</text>
+  <text x="485" y="860" text-anchor="middle" class="component-text">• Machine Learning models</text>
+  <text x="485" y="875" text-anchor="middle" class="component-text">• Baseline behavior</text>
+  <text x="485" y="890" text-anchor="middle" class="component-text">• Anomaly detection</text>
+  <text x="485" y="905" text-anchor="middle" class="component-text">Example: Unusual data download</text>
+
+  <rect x="640" y="825" width="250" height="100" class="component-box"/>
+  <text x="765" y="845" text-anchor="middle" class="component-title">Threat Intelligence</text>
+  <text x="765" y="860" text-anchor="middle" class="component-text">• IOC matching</text>
+  <text x="765" y="875" text-anchor="middle" class="component-text">• IP/Domain reputation</text>
+  <text x="765" y="890" text-anchor="middle" class="component-text">• STIX/TAXII feeds</text>
+  <text x="765" y="905" text-anchor="middle" class="component-text">Example: Connection to C2 server</text>
+
+  <rect x="920" y="825" width="250" height="100" class="component-box"/>
+  <text x="1045" y="845" text-anchor="middle" class="component-title">Statistical Analysis</text>
+  <text x="1045" y="860" text-anchor="middle" class="component-text">• Frequency analysis</text>
+  <text x="1045" y="875" text-anchor="middle" class="component-text">• Threshold monitoring</text>
+  <text x="1045" y="890" text-anchor="middle" class="component-text">• Trend detection</text>
+  <text x="1045" y="905" text-anchor="middle" class="component-text">Example: Spike in traffic volume</text>
+
+  <!-- Event reduction indicator -->
+  <text x="700" y="955" text-anchor="middle" class="flow-text">Alert Generation: 10M events → 200 alerts/day</text>
+
+  <!-- Arrow to Alerting -->
+  <path d="M 700 940 L 700 990" class="arrow"/>
+
+  <!-- Layer 6: Alerting & Incident Management -->
+  <rect x="50" y="990" width="1300" height="140" class="layer-6" rx="8"/>
+  <text x="70" y="1020" class="layer-title">Layer 6: Alerting &amp; Incident Management</text>
+
+  <rect x="100" y="1035" width="220" height="80" class="component-box"/>
+  <text x="210" y="1055" text-anchor="middle" class="component-title">Alert Enrichment</text>
+  <text x="210" y="1070" text-anchor="middle" class="component-text">• Add asset criticality</text>
+  <text x="210" y="1085" text-anchor="middle" class="component-text">• User context</text>
+  <text x="210" y="1100" text-anchor="middle" class="component-text">• Risk scoring</text>
+
+  <rect x="350" y="1035" width="220" height="80" class="component-box"/>
+  <text x="460" y="1055" text-anchor="middle" class="component-title">Alert Prioritization</text>
+  <text x="460" y="1070" text-anchor="middle" class="component-text">• Severity assignment</text>
+  <text x="460" y="1085" text-anchor="middle" class="component-text">• MITRE ATT&amp;CK mapping</text>
+  <text x="460" y="1100" text-anchor="middle" class="component-text">• Business impact scoring</text>
+
+  <rect x="600" y="1035" width="220" height="80" class="component-box"/>
+  <text x="710" y="1055" text-anchor="middle" class="component-title">Deduplication</text>
+  <text x="710" y="1070" text-anchor="middle" class="component-text">• Group similar alerts</text>
+  <text x="710" y="1085" text-anchor="middle" class="component-text">• Reduce alert fatigue</text>
+  <text x="710" y="1100" text-anchor="middle" class="component-text">• Smart aggregation</text>
+
+  <rect x="850" y="1035" width="220" height="80" class="component-box"/>
+  <text x="960" y="1055" text-anchor="middle" class="component-title">Notification</text>
+  <text x="960" y="1070" text-anchor="middle" class="component-text">• Email, SMS, Slack</text>
+  <text x="960" y="1085" text-anchor="middle" class="component-text">• On-call escalation</text>
+  <text x="960" y="1100" text-anchor="middle" class="component-text">• Ticketing integration</text>
+
+  <!-- Arrow to Visualization -->
+  <path d="M 350 1130 L 350 1180" class="arrow"/>
+  <path d="M 1050 1130 L 1050 1180" class="arrow"/>
+
+  <!-- Layer 7: Visualization & Investigation -->
+  <rect x="50" y="1180" width="1300" height="140" class="layer-7" rx="8"/>
+  <text x="70" y="1210" class="layer-title">Layer 7: Visualization, Dashboards &amp; Investigation</text>
+
+  <rect x="100" y="1225" width="250" height="80" class="component-box"/>
+  <text x="225" y="1245" text-anchor="middle" class="component-title">Real-time Dashboards</text>
+  <text x="225" y="1260" text-anchor="middle" class="component-text">• SOC wallboards</text>
+  <text x="225" y="1275" text-anchor="middle" class="component-text">• Executive summaries</text>
+  <text x="225" y="1290" text-anchor="middle" class="component-text">• Metrics &amp; KPIs</text>
+
+  <rect x="380" y="1225" width="250" height="80" class="component-box"/>
+  <text x="505" y="1245" text-anchor="middle" class="component-title">Investigation Workbench</text>
+  <text x="505" y="1260" text-anchor="middle" class="component-text">• Timeline reconstruction</text>
+  <text x="505" y="1275" text-anchor="middle" class="component-text">• Pivot analysis</text>
+  <text x="505" y="1290" text-anchor="middle" class="component-text">• Evidence collection</text>
+
+  <rect x="660" y="1225" width="250" height="80" class="component-box"/>
+  <text x="785" y="1245" text-anchor="middle" class="component-title">Threat Hunting Interface</text>
+  <text x="785" y="1260" text-anchor="middle" class="component-text">• Query builder (SPL, KQL)</text>
+  <text x="785" y="1275" text-anchor="middle" class="component-text">• Hypothesis testing</text>
+  <text x="785" y="1290" text-anchor="middle" class="component-text">• IOC searching</text>
+
+  <rect x="940" y="1225" width="250" height="80" class="component-box"/>
+  <text x="1065" y="1245" text-anchor="middle" class="component-title">Reporting Engine</text>
+  <text x="1065" y="1260" text-anchor="middle" class="component-text">• Compliance reports</text>
+  <text x="1065" y="1275" text-anchor="middle" class="component-text">• Scheduled reports</text>
+  <text x="1065" y="1290" text-anchor="middle" class="component-text">• Custom visualizations</text>
+
+  <!-- Arrow to Integration -->
+  <path d="M 700 1320 L 700 1370" class="arrow"/>
+
+  <!-- Layer 8: Integration & Orchestration -->
+  <rect x="50" y="1370" width="1300" height="140" class="layer-8" rx="8"/>
+  <text x="70" y="1400" class="layer-title">Layer 8: Integration &amp; Orchestration APIs</text>
+
+  <rect x="100" y="1415" width="200" height="80" class="component-box"/>
+  <text x="200" y="1435" text-anchor="middle" class="component-title">SOAR Integration</text>
+  <text x="200" y="1450" text-anchor="middle" class="component-text">• Send alerts</text>
+  <text x="200" y="1465" text-anchor="middle" class="component-text">• Trigger playbooks</text>
+  <text x="200" y="1480" text-anchor="middle" class="component-text">• Automated response</text>
+
+  <rect x="330" y="1415" width="200" height="80" class="component-box"/>
+  <text x="430" y="1435" text-anchor="middle" class="component-title">Ticketing Systems</text>
+  <text x="430" y="1450" text-anchor="middle" class="component-text">• ServiceNow</text>
+  <text x="430" y="1465" text-anchor="middle" class="component-text">• Jira, Remedy</text>
+  <text x="430" y="1480" text-anchor="middle" class="component-text">• Case management</text>
+
+  <rect x="560" y="1415" width="200" height="80" class="component-box"/>
+  <text x="660" y="1435" text-anchor="middle" class="component-title">TIP Integration</text>
+  <text x="660" y="1450" text-anchor="middle" class="component-text">• Threat intel feeds</text>
+  <text x="660" y="1465" text-anchor="middle" class="component-text">• IOC enrichment</text>
+  <text x="660" y="1480" text-anchor="middle" class="component-text">• STIX/TAXII</text>
+
+  <rect x="790" y="1415" width="200" height="80" class="component-box"/>
+  <text x="890" y="1435" text-anchor="middle" class="component-title">EDR/XDR APIs</text>
+  <text x="890" y="1450" text-anchor="middle" class="component-text">• CrowdStrike Falcon</text>
+  <text x="890" y="1465" text-anchor="middle" class="component-text">• Isolate endpoints</text>
+  <text x="890" y="1480" text-anchor="middle" class="component-text">• Get detailed telemetry</text>
+
+  <rect x="1020" y="1415" width="200" height="80" class="component-box"/>
+  <text x="1120" y="1435" text-anchor="middle" class="component-title">Other Integrations</text>
+  <text x="1120" y="1450" text-anchor="middle" class="component-text">• Firewall APIs</text>
+  <text x="1120" y="1465" text-anchor="middle" class="component-text">• Cloud APIs</text>
+  <text x="1120" y="1480" text-anchor="middle" class="component-text">• Custom webhooks</text>
+
+  <!-- Output Arrows -->
+  <path d="M 200 1495 L 200 1545" class="arrow"/>
+  <path d="M 430 1495 L 430 1545" class="arrow"/>
+  <path d="M 890 1495 L 890 1545" class="arrow"/>
+
+  <!-- Output Layer -->
+  <rect x="70" y="1555" width="230" height="60" class="output-box"/>
+  <text x="185" y="1575" text-anchor="middle" class="component-title">SOAR Platform</text>
+  <text x="185" y="1590" text-anchor="middle" class="component-text">Automated Response</text>
+  <text x="185" y="1605" text-anchor="middle" class="component-text">Playbook Execution</text>
+
+  <rect x="330" y="1555" width="230" height="60" class="output-box"/>
+  <text x="445" y="1575" text-anchor="middle" class="component-title">SOC Team</text>
+  <text x="445" y="1590" text-anchor="middle" class="component-text">Human Analysts</text>
+  <text x="445" y="1605" text-anchor="middle" class="component-text">Investigation &amp; Response</text>
+
+  <rect x="590" y="1555" width="230" height="60" class="output-box"/>
+  <text x="705" y="1575" text-anchor="middle" class="component-title">Compliance Teams</text>
+  <text x="705" y="1590" text-anchor="middle" class="component-text">Audit Reports</text>
+  <text x="705" y="1605" text-anchor="middle" class="component-text">Evidence Collection</text>
+
+  <rect x="850" y="1555" width="230" height="60" class="output-box"/>
+  <text x="965" y="1575" text-anchor="middle" class="component-title">Security Tools</text>
+  <text x="965" y="1590" text-anchor="middle" class="component-text">EDR, Firewall, etc.</text>
+  <text x="965" y="1605" text-anchor="middle" class="component-text">Receive response commands</text>
+
+  <rect x="1110" y="1555" width="230" height="60" class="output-box"/>
+  <text x="1225" y="1575" text-anchor="middle" class="component-title">Management</text>
+  <text x="1225" y="1590" text-anchor="middle" class="component-text">Executive Dashboards</text>
+  <text x="1225" y="1605" text-anchor="middle" class="component-text">Risk Metrics</text>
+
+  <!-- Side Data Flow Annotation -->
+  <rect x="1280" y="430" width="20" height="140" fill="#e74c3c" opacity="0.3"/>
+  <text x="1330" y="500" class="label-text" transform="rotate(90 1330 500)">Data Processing Pipeline</text>
+
+  <!-- Legend -->
+  <rect x="50" y="1650" width="1300" height="120" fill="#f8f9fa" stroke="#ddd" stroke-width="1" rx="5"/>
+  <text x="70" y="1675" class="component-title">Legend &amp; Key Metrics:</text>
+
+  <rect x="70" y="1685" width="15" height="15" class="data-source"/>
+  <text x="95" y="1697" class="component-text">Data Sources (100+ types)</text>
+
+  <rect x="250" y="1685" width="15" height="15" class="component-box"/>
+  <text x="275" y="1697" class="component-text">SIEM Components</text>
+
+  <rect x="430" y="1685" width="15" height="15" class="output-box"/>
+  <text x="455" y="1697" class="component-text">Output Systems</text>
+
+  <line x1="610" y1="1692" x2="650" y2="1692" class="arrow"/>
+  <text x="660" y="1697" class="component-text">Data Flow Direction</text>
+
+  <text x="70" y="1725" class="component-text"><tspan font-weight="bold">Key Transformation:</tspan> Raw Events (10,000,000/day) → Normalized Data → Correlated Intelligence → Actionable Alerts (200/day)</text>
+  <text x="70" y="1745" class="component-text"><tspan font-weight="bold">Reduction Ratio:</tspan> 50,000:1 (millions of events reduced to hundreds of high-confidence alerts)</text>
+  <text x="70" y="1760" class="component-text"><tspan font-weight="bold">Purpose:</tspan> Transform massive volumes of security data into actionable intelligence for SOC teams</text>
+</svg>

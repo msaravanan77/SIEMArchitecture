@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2000" width="1600" height="2000">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 36px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 16px; fill: #666; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #fff; }
+      .section-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .component-title { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #333; }
+      .component-text { font-family: Arial, sans-serif; font-size: 10px; fill: #555; }
+      .tool-text { font-family: Arial, sans-serif; font-size: 11px; fill: #444; }
+      .label-text { font-family: Arial, sans-serif; font-size: 11px; fill: #666; }
+      .flow-label { font-family: Arial, sans-serif; font-size: 10px; fill: #0066cc; font-weight: bold; }
+      .highlight-text { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #e74c3c; }
+
+      .soc-box { fill: #2c3e50; stroke: #1a252f; stroke-width: 3; }
+      .siem-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 3; }
+      .soar-box { fill: #f39c12; stroke: #d68910; stroke-width: 3; }
+      .xdr-box { fill: #9b59b6; stroke: #7d3c98; stroke-width: 3; }
+      .edr-box { fill: #3498db; stroke: #2980b9; stroke-width: 3; }
+      .prevention-box { fill: #27ae60; stroke: #1e8449; stroke-width: 2; }
+      .detection-box { fill: #e67e22; stroke: #ca6f1e; stroke-width: 2; }
+      .cloud-box { fill: #5dade2; stroke: #3498db; stroke-width: 2; }
+      .identity-box { fill: #48c9b0; stroke: #17a589; stroke-width: 2; }
+      .tool-box { fill: #ecf0f1; stroke: #95a5a6; stroke-width: 1.5; }
+      .analyst-box { fill: #34495e; stroke: #2c3e50; stroke-width: 2; }
+
+      .data-flow { stroke: #3498db; stroke-width: 2.5; fill: none; marker-end: url(#arrow-blue); }
+      .alert-flow { stroke: #e74c3c; stroke-width: 3; fill: none; marker-end: url(#arrow-red); stroke-dasharray: 5,5; }
+      .response-flow { stroke: #27ae60; stroke-width: 2.5; fill: none; marker-end: url(#arrow-green); }
+      .bidirectional { stroke: #9b59b6; stroke-width: 2; fill: none; }
+    </style>
+
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498db" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#e74c3c" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#27ae60" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="800" y="50" text-anchor="middle" class="title">SIEM in the Cybersecurity Ecosystem</text>
+  <text x="800" y="75" text-anchor="middle" class="subtitle">Complete Integration Architecture - How SIEM Connects Everything</text>
+
+  <!-- ============================================ -->
+  <!-- ASSET LAYER (Bottom) -->
+  <!-- ============================================ -->
+  <rect x="50" y="1780" width="1500" height="80" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2" rx="8"/>
+  <text x="800" y="1805" text-anchor="middle" class="section-title">ASSET LAYER</text>
+  <text x="800" y="1825" text-anchor="middle" class="tool-text">Endpoints (10,000+) | Servers | Network Infrastructure | Cloud Resources | Applications | IoT/OT Devices</text>
+  <text x="800" y="1845" text-anchor="middle" class="label-text">This is what we're protecting - the crown jewels</text>
+
+  <!-- Arrows from Assets to Prevention -->
+  <path d="M 300 1780 L 300 1720" class="data-flow"/>
+  <path d="M 800 1780 L 800 1720" class="data-flow"/>
+  <path d="M 1300 1780 L 1300 1720" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- PREVENTION LAYER -->
+  <!-- ============================================ -->
+  <rect x="50" y="1620" width="1500" height="150" fill="#d5f4e6" stroke="#27ae60" stroke-width="2" rx="8"/>
+  <text x="800" y="1645" text-anchor="middle" class="section-title">PREVENTION LAYER (First Line of Defense)</text>
+
+  <!-- Prevention Tools -->
+  <rect x="80" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="150" y="1680" text-anchor="middle" class="component-title">Firewalls</text>
+  <text x="150" y="1695" text-anchor="middle" class="component-text">Palo Alto, Cisco</text>
+
+  <rect x="240" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="310" y="1680" text-anchor="middle" class="component-title">WAF</text>
+  <text x="310" y="1695" text-anchor="middle" class="component-text">Cloudflare, F5</text>
+
+  <rect x="400" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="470" y="1680" text-anchor="middle" class="component-title">Antivirus</text>
+  <text x="470" y="1695" text-anchor="middle" class="component-text">Traditional AV</text>
+
+  <rect x="560" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="630" y="1680" text-anchor="middle" class="component-title">Email Gateway</text>
+  <text x="630" y="1695" text-anchor="middle" class="component-text">Proofpoint, Mimecast</text>
+
+  <rect x="720" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="790" y="1680" text-anchor="middle" class="component-title">Web Proxy</text>
+  <text x="790" y="1695" text-anchor="middle" class="component-text">Zscaler, Proxy SG</text>
+
+  <rect x="880" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="950" y="1680" text-anchor="middle" class="component-title">MFA/IAM</text>
+  <text x="950" y="1695" text-anchor="middle" class="component-text">Okta, Duo</text>
+
+  <rect x="1040" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="1110" y="1680" text-anchor="middle" class="component-title">VPN</text>
+  <text x="1110" y="1695" text-anchor="middle" class="component-text">Remote Access</text>
+
+  <rect x="1200" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="1270" y="1680" text-anchor="middle" class="component-title">Patch Mgmt</text>
+  <text x="1270" y="1695" text-anchor="middle" class="component-text">WSUS, SCCM</text>
+
+  <rect x="1360" y="1660" width="140" height="50" class="prevention-box" rx="5"/>
+  <text x="1430" y="1680" text-anchor="middle" class="component-title">NAC</text>
+  <text x="1430" y="1695" text-anchor="middle" class="component-text">Network Access</text>
+
+  <text x="800" y="1735" text-anchor="middle" class="flow-label">↓ Logs flow to SIEM ↓</text>
+
+  <!-- Arrows from Prevention to Detection -->
+  <path d="M 150 1620 L 150 1560" class="data-flow"/>
+  <path d="M 470 1620 L 470 1560" class="data-flow"/>
+  <path d="M 790 1620 L 790 1560" class="data-flow"/>
+  <path d="M 1110 1620 L 1110 1560" class="data-flow"/>
+  <path d="M 1430 1620 L 1430 1560" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- DETECTION & RESPONSE LAYER -->
+  <!-- ============================================ -->
+  <rect x="50" y="1360" width="1500" height="190" fill="#fdebd0" stroke="#e67e22" stroke-width="2" rx="8"/>
+  <text x="800" y="1385" text-anchor="middle" class="section-title">DETECTION &amp; RESPONSE LAYER (Active Monitoring)</text>
+
+  <!-- EDR Section -->
+  <rect x="80" y="1400" width="180" height="135" class="edr-box" rx="5"/>
+  <text x="170" y="1420" text-anchor="middle" class="layer-title">EDR</text>
+  <text x="170" y="1440" text-anchor="middle" class="component-text" fill="#fff">CrowdStrike Falcon</text>
+  <text x="170" y="1455" text-anchor="middle" class="component-text" fill="#fff">SentinelOne</text>
+  <text x="170" y="1470" text-anchor="middle" class="component-text" fill="#fff">Microsoft Defender</text>
+  <text x="170" y="1490" text-anchor="middle" class="component-text" fill="#fff">Deep endpoint visibility</text>
+  <text x="170" y="1505" text-anchor="middle" class="component-text" fill="#fff">Process-level detection</text>
+  <text x="170" y="1520" text-anchor="middle" class="component-text" fill="#fff">Automated response</text>
+
+  <!-- NDR Section -->
+  <rect x="280" y="1400" width="180" height="135" class="detection-box" rx="5"/>
+  <text x="370" y="1420" text-anchor="middle" class="layer-title">NDR</text>
+  <text x="370" y="1440" text-anchor="middle" class="component-text" fill="#fff">Darktrace</text>
+  <text x="370" y="1455" text-anchor="middle" class="component-text" fill="#fff">Vectra AI</text>
+  <text x="370" y="1470" text-anchor="middle" class="component-text" fill="#fff">ExtraHop</text>
+  <text x="370" y="1490" text-anchor="middle" class="component-text" fill="#fff">Network traffic analysis</text>
+  <text x="370" y="1505" text-anchor="middle" class="component-text" fill="#fff">Lateral movement</text>
+  <text x="370" y="1520" text-anchor="middle" class="component-text" fill="#fff">Anomaly detection</text>
+
+  <!-- IDS/IPS Section -->
+  <rect x="480" y="1400" width="180" height="135" class="detection-box" rx="5"/>
+  <text x="570" y="1420" text-anchor="middle" class="layer-title">IDS/IPS</text>
+  <text x="570" y="1440" text-anchor="middle" class="component-text" fill="#fff">Snort, Suricata</text>
+  <text x="570" y="1455" text-anchor="middle" class="component-text" fill="#fff">Cisco Firepower</text>
+  <text x="570" y="1490" text-anchor="middle" class="component-text" fill="#fff">Signature detection</text>
+  <text x="570" y="1505" text-anchor="middle" class="component-text" fill="#fff">Network threats</text>
+  <text x="570" y="1520" text-anchor="middle" class="component-text" fill="#fff">Inline blocking</text>
+
+  <!-- DLP Section -->
+  <rect x="680" y="1400" width="180" height="135" class="detection-box" rx="5"/>
+  <text x="770" y="1420" text-anchor="middle" class="layer-title">DLP</text>
+  <text x="770" y="1440" text-anchor="middle" class="component-text" fill="#fff">Symantec DLP</text>
+  <text x="770" y="1455" text-anchor="middle" class="component-text" fill="#fff">Forcepoint</text>
+  <text x="770" y="1490" text-anchor="middle" class="component-text" fill="#fff">Data exfiltration</text>
+  <text x="770" y="1505" text-anchor="middle" class="component-text" fill="#fff">Policy violations</text>
+  <text x="770" y="1520" text-anchor="middle" class="component-text" fill="#fff">Sensitive data tracking</text>
+
+  <!-- CASB Section -->
+  <rect x="880" y="1400" width="180" height="135" class="cloud-box" rx="5"/>
+  <text x="970" y="1420" text-anchor="middle" class="layer-title">CASB</text>
+  <text x="970" y="1440" text-anchor="middle" class="component-text" fill="#fff">Netskope</text>
+  <text x="970" y="1455" text-anchor="middle" class="component-text" fill="#fff">Zscaler</text>
+  <text x="970" y="1490" text-anchor="middle" class="component-text" fill="#fff">Cloud app security</text>
+  <text x="970" y="1505" text-anchor="middle" class="component-text" fill="#fff">Shadow IT</text>
+  <text x="970" y="1520" text-anchor="middle" class="component-text" fill="#fff">SaaS monitoring</text>
+
+  <!-- Deception Section -->
+  <rect x="1080" y="1400" width="180" height="135" class="detection-box" rx="5"/>
+  <text x="1170" y="1420" text-anchor="middle" class="layer-title">Deception</text>
+  <text x="1170" y="1440" text-anchor="middle" class="component-text" fill="#fff">Honeypots</text>
+  <text x="1170" y="1455" text-anchor="middle" class="component-text" fill="#fff">Canary Tokens</text>
+  <text x="1170" y="1490" text-anchor="middle" class="component-text" fill="#fff">Early warning</text>
+  <text x="1170" y="1505" text-anchor="middle" class="component-text" fill="#fff">Attacker detection</text>
+  <text x="1170" y="1520" text-anchor="middle" class="component-text" fill="#fff">Zero false positives</text>
+
+  <!-- Vuln Mgmt Section -->
+  <rect x="1280" y="1400" width="180" height="135" class="detection-box" rx="5"/>
+  <text x="1370" y="1420" text-anchor="middle" class="layer-title">Vuln Scanner</text>
+  <text x="1370" y="1440" text-anchor="middle" class="component-text" fill="#fff">Tenable/Nessus</text>
+  <text x="1370" y="1455" text-anchor="middle" class="component-text" fill="#fff">Qualys</text>
+  <text x="1370" y="1490" text-anchor="middle" class="component-text" fill="#fff">Vulnerability detection</text>
+  <text x="1370" y="1505" text-anchor="middle" class="component-text" fill="#fff">Risk scoring</text>
+  <text x="1370" y="1520" text-anchor="middle" class="component-text" fill="#fff">Remediation tracking</text>
+
+  <text x="800" y="1565" text-anchor="middle" class="flow-label">↓ All telemetry flows to SIEM for correlation ↓</text>
+
+  <!-- Arrows from Detection to Core -->
+  <path d="M 170 1360 L 170 1220 L 400 1100" class="data-flow"/>
+  <path d="M 370 1360 L 370 1220 L 450 1100" class="data-flow"/>
+  <path d="M 570 1360 L 570 1220 L 500 1100" class="data-flow"/>
+  <path d="M 770 1360 L 770 1220 L 600 1100" class="data-flow"/>
+  <path d="M 970 1360 L 970 1220 L 650 1100" class="data-flow"/>
+  <path d="M 1170 1360 L 1170 1220 L 700 1100" class="data-flow"/>
+  <path d="M 1370 1360 L 1370 1220 L 750 1100" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- CLOUD & IDENTITY LAYER (Side) -->
+  <!-- ============================================ -->
+  <rect x="50" y="1120" width="280" height="220" fill="#ebf5fb" stroke="#3498db" stroke-width="2" rx="8"/>
+  <text x="190" y="1145" text-anchor="middle" class="section-title">CLOUD PLATFORMS</text>
+
+  <rect x="70" y="1160" width="120" height="45" class="cloud-box" rx="5"/>
+  <text x="130" y="1178" text-anchor="middle" class="component-title">AWS</text>
+  <text x="130" y="1193" text-anchor="middle" class="component-text" fill="#fff">CloudTrail, GuardDuty</text>
+
+  <rect x="200" y="1160" width="120" height="45" class="cloud-box" rx="5"/>
+  <text x="260" y="1178" text-anchor="middle" class="component-title">Azure</text>
+  <text x="260" y="1193" text-anchor="middle" class="component-text" fill="#fff">Monitor, Defender</text>
+
+  <rect x="70" y="1215" width="120" height="45" class="cloud-box" rx="5"/>
+  <text x="130" y="1233" text-anchor="middle" class="component-title">GCP</text>
+  <text x="130" y="1248" text-anchor="middle" class="component-text" fill="#fff">Cloud Logging</text>
+
+  <rect x="200" y="1215" width="120" height="45" class="cloud-box" rx="5"/>
+  <text x="260" y="1233" text-anchor="middle" class="component-title">Office 365</text>
+  <text x="260" y="1248" text-anchor="middle" class="component-text" fill="#fff">Audit Logs</text>
+
+  <rect x="70" y="1270" width="250" height="55" class="identity-box" rx="5"/>
+  <text x="195" y="1290" text-anchor="middle" class="component-title">Identity &amp; Access</text>
+  <text x="195" y="1305" text-anchor="middle" class="component-text" fill="#fff">Active Directory | Okta | Azure AD</text>
+  <text x="195" y="1318" text-anchor="middle" class="component-text" fill="#fff">Authentication, Authorization Events</text>
+
+  <!-- Arrow from Cloud to SIEM -->
+  <path d="M 330 1230 L 400 1050" class="data-flow"/>
+
+  <!-- ============================================ -->
+  <!-- XDR LAYER (Side) -->
+  <!-- ============================================ -->
+  <rect x="1270" y="1120" width="280" height="220" fill="#f4ecf7" stroke="#9b59b6" stroke-width="2" rx="8"/>
+  <text x="1410" y="1145" text-anchor="middle" class="section-title">XDR PLATFORMS</text>
+
+  <rect x="1290" y="1160" width="240" height="40" class="xdr-box" rx="5"/>
+  <text x="1410" y="1183" text-anchor="middle" class="component-title" fill="#fff">Palo Alto Cortex XDR</text>
+
+  <rect x="1290" y="1210" width="240" height="40" class="xdr-box" rx="5"/>
+  <text x="1410" y="1233" text-anchor="middle" class="component-title" fill="#fff">Microsoft Defender XDR</text>
+
+  <rect x="1290" y="1260" width="240" height="40" class="xdr-box" rx="5"/>
+  <text x="1410" y="1283" text-anchor="middle" class="component-title" fill="#fff">Trend Micro Vision One</text>
+
+  <text x="1410" y="1318" text-anchor="middle" class="component-text">Extended Detection: Endpoint + Network</text>
+  <text x="1410" y="1332" text-anchor="middle" class="component-text">+ Cloud + Email (Unified Platform)</text>
+
+  <!-- Bidirectional arrow between XDR and SIEM -->
+  <path d="M 1270 1230 L 920 1050" class="data-flow"/>
+  <path d="M 920 1030 L 1270 1210" class="alert-flow"/>
+  <text x="1095" y="1120" class="flow-label">Correlated</text>
+  <text x="1095" y="1135" class="flow-label">Alerts</text>
+
+  <!-- ============================================ -->
+  <!-- CORE: SIEM, SOAR, SOC (Center) -->
+  <!-- ============================================ -->
+
+  <!-- Main SIEM Box -->
+  <rect x="400" y="850" width="520" height="250" class="siem-box" rx="10"/>
+  <text x="660" y="885" text-anchor="middle" class="layer-title" font-size="24">SIEM Platform</text>
+  <text x="660" y="910" text-anchor="middle" class="component-text" fill="#fff">(Central Analytics Hub - The Brain)</text>
+
+  <text x="660" y="935" text-anchor="middle" class="component-text" fill="#fff" font-size="12">Splunk | IBM QRadar | Microsoft Sentinel | Elastic Security</text>
+
+  <rect x="420" y="950" width="220" height="65" fill="#fff" opacity="0.2" rx="5"/>
+  <text x="530" y="970" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Core Functions:</text>
+  <text x="530" y="985" text-anchor="middle" class="component-text" fill="#fff">• Aggregate ALL security data</text>
+  <text x="530" y="1000" text-anchor="middle" class="component-text" fill="#fff">• Normalize &amp; correlate events</text>
+
+  <rect x="655" y="950" width="245" height="65" fill="#fff" opacity="0.2" rx="5"/>
+  <text x="777" y="970" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Detection &amp; Analytics:</text>
+  <text x="777" y="985" text-anchor="middle" class="component-text" fill="#fff">• Rule-based correlation</text>
+  <text x="777" y="1000" text-anchor="middle" class="component-text" fill="#fff">• UEBA, ML, threat intelligence</text>
+
+  <rect x="420" y="1025" width="220" height="60" fill="#fff" opacity="0.2" rx="5"/>
+  <text x="530" y="1045" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Alerting:</text>
+  <text x="530" y="1060" text-anchor="middle" class="component-text" fill="#fff">• 10M events → 200 alerts/day</text>
+  <text x="530" y="1075" text-anchor="middle" class="component-text" fill="#fff">• Prioritization &amp; enrichment</text>
+
+  <rect x="655" y="1025" width="245" height="60" fill="#fff" opacity="0.2" rx="5"/>
+  <text x="777" y="1045" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Investigation:</text>
+  <text x="777" y="1060" text-anchor="middle" class="component-text" fill="#fff">• Forensics &amp; threat hunting</text>
+  <text x="777" y="1075" text-anchor="middle" class="component-text" fill="#fff">• Compliance reporting</text>
+
+  <!-- SOAR Box (Right of SIEM) -->
+  <rect x="960" y="850" width="340" height="250" class="soar-box" rx="10"/>
+  <text x="1130" y="885" text-anchor="middle" class="layer-title" font-size="24">SOAR Platform</text>
+  <text x="1130" y="910" text-anchor="middle" class="component-text" fill="#fff">(Orchestration - The Hands)</text>
+
+  <text x="1130" y="935" text-anchor="middle" class="component-text" fill="#fff" font-size="12">Splunk SOAR | Palo Alto XSOAR | IBM Resilient</text>
+
+  <rect x="980" y="950" width="290" height="80" fill="#fff" opacity="0.2" rx="5"/>
+  <text x="1125" y="970" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Automated Response:</text>
+  <text x="1125" y="985" text-anchor="middle" class="component-text" fill="#fff">• Receives alerts from SIEM</text>
+  <text x="1125" y="1000" text-anchor="middle" class="component-text" fill="#fff">• Executes playbooks automatically</text>
+  <text x="1125" y="1015" text-anchor="middle" class="component-text" fill="#fff">• Orchestrates 100+ security tools</text>
+
+  <rect x="980" y="1040" width="290" height="50" fill="#fff" opacity="0.2" rx="5"/>
+  <text x="1125" y="1060" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Actions:</text>
+  <text x="1125" y="1075" text-anchor="middle" class="component-text" fill="#fff">Isolate endpoint, block IP, disable user,</text>
+  <text x="1125" y="1088" text-anchor="middle" class="component-text" fill="#fff">create ticket, notify stakeholders</text>
+
+  <!-- SOC Box (Left of SIEM) -->
+  <rect x="100" y="850" width="280" height="250" class="soc-box" rx="10"/>
+  <text x="240" y="885" text-anchor="middle" class="layer-title" font-size="24">SOC Team</text>
+  <text x="240" y="910" text-anchor="middle" class="component-text" fill="#fff">(Human Analysts)</text>
+
+  <!-- Analyst Tiers -->
+  <rect x="120" y="930" width="240" height="50" class="analyst-box" rx="5"/>
+  <text x="240" y="950" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Tier 1: Alert Triage</text>
+  <text x="240" y="965" text-anchor="middle" class="component-text" fill="#fff">Review alerts, filter false positives</text>
+
+  <rect x="120" y="990" width="240" height="50" class="analyst-box" rx="5"/>
+  <text x="240" y="1010" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Tier 2: Investigation</text>
+  <text x="240" y="1025" text-anchor="middle" class="component-text" fill="#fff">Deep dive analysis, use SIEM tools</text>
+
+  <rect x="120" y="1050" width="240" height="50" class="analyst-box" rx="5"/>
+  <text x="240" y="1070" text-anchor="middle" class="component-text" fill="#fff" font-weight="bold">Tier 3: Incident Response</text>
+  <text x="240" y="1085" text-anchor="middle" class="component-text" fill="#fff">Advanced threats, forensics, remediation</text>
+
+  <!-- Arrows between SOC, SIEM, SOAR -->
+  <path d="M 380 975 L 400 975" class="bidirectional" stroke-width="4"/>
+  <path d="M 400 975 L 380 975" class="bidirectional" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <text x="390" y="965" text-anchor="middle" class="flow-label">Uses</text>
+
+  <path d="M 920 975 L 960 975" class="alert-flow" stroke-width="4"/>
+  <text x="940" y="965" text-anchor="middle" class="flow-label">Alerts</text>
+
+  <path d="M 960 1025 L 920 1025" class="response-flow" stroke-width="4"/>
+  <text x="940" y="1045" text-anchor="middle" class="flow-label">Status</text>
+
+  <path d="M 240 850 L 240 820 L 1130 820 L 1130 850" class="bidirectional" stroke-width="3"/>
+  <text x="685" y="810" text-anchor="middle" class="highlight-text">SOC uses SIEM to detect, SOAR to respond</text>
+
+  <!-- ============================================ -->
+  <!-- THREAT INTELLIGENCE & SUPPORTING TOOLS -->
+  <!-- ============================================ -->
+  <rect x="50" y="650" width="1500" height="160" fill="#f9ebea" stroke="#c0392b" stroke-width="2" rx="8"/>
+  <text x="800" y="675" text-anchor="middle" class="section-title">THREAT INTELLIGENCE &amp; SUPPORTING PLATFORMS</text>
+
+  <rect x="80" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="170" y="710" text-anchor="middle" class="component-title">Threat Intel (TIP)</text>
+  <text x="170" y="730" text-anchor="middle" class="component-text">Anomali, ThreatConnect</text>
+  <text x="170" y="750" text-anchor="middle" class="component-text">IOC feeds, STIX/TAXII</text>
+  <text x="170" y="765" text-anchor="middle" class="component-text">IP/Domain reputation</text>
+  <text x="170" y="780" text-anchor="middle" class="component-text">Malware intelligence</text>
+
+  <rect x="280" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="370" y="710" text-anchor="middle" class="component-title">UEBA</text>
+  <text x="370" y="730" text-anchor="middle" class="component-text">Exabeam, Securonix</text>
+  <text x="370" y="750" text-anchor="middle" class="component-text">User behavior analytics</text>
+  <text x="370" y="765" text-anchor="middle" class="component-text">Anomaly detection</text>
+  <text x="370" y="780" text-anchor="middle" class="component-text">Insider threat detection</text>
+
+  <rect x="480" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="570" y="710" text-anchor="middle" class="component-title">GRC Platform</text>
+  <text x="570" y="730" text-anchor="middle" class="component-text">Governance, Risk,</text>
+  <text x="570" y="745" text-anchor="middle" class="component-text">Compliance</text>
+  <text x="570" y="765" text-anchor="middle" class="component-text">Policy management</text>
+  <text x="570" y="780" text-anchor="middle" class="component-text">Audit frameworks</text>
+
+  <rect x="680" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="770" y="710" text-anchor="middle" class="component-title">Ticketing/ITSM</text>
+  <text x="770" y="730" text-anchor="middle" class="component-text">ServiceNow, Jira</text>
+  <text x="770" y="750" text-anchor="middle" class="component-text">Incident tracking</text>
+  <text x="770" y="765" text-anchor="middle" class="component-text">Workflow management</text>
+  <text x="770" y="780" text-anchor="middle" class="component-text">SLA monitoring</text>
+
+  <rect x="880" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="970" y="710" text-anchor="middle" class="component-title">CMDB</text>
+  <text x="970" y="730" text-anchor="middle" class="component-text">Asset database</text>
+  <text x="970" y="750" text-anchor="middle" class="component-text">Configuration mgmt</text>
+  <text x="970" y="765" text-anchor="middle" class="component-text">Asset criticality</text>
+  <text x="970" y="780" text-anchor="middle" class="component-text">Ownership data</text>
+
+  <rect x="1080" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="1170" y="710" text-anchor="middle" class="component-title">Sandbox</text>
+  <text x="1170" y="730" text-anchor="middle" class="component-text">Cuckoo, FireEye</text>
+  <text x="1170" y="750" text-anchor="middle" class="component-text">Malware analysis</text>
+  <text x="1170" y="765" text-anchor="middle" class="component-text">File detonation</text>
+  <text x="1170" y="780" text-anchor="middle" class="component-text">Behavioral analysis</text>
+
+  <rect x="1280" y="690" width="180" height="100" class="tool-box" rx="5"/>
+  <text x="1370" y="710" text-anchor="middle" class="component-title">Packet Capture</text>
+  <text x="1370" y="730" text-anchor="middle" class="component-text">PCAP storage</text>
+  <text x="1370" y="750" text-anchor="middle" class="component-text">Full packet analysis</text>
+  <text x="1370" y="765" text-anchor="middle" class="component-text">Forensic evidence</text>
+  <text x="1370" y="780" text-anchor="middle" class="component-text">Network reconstruction</text>
+
+  <!-- Arrows from Supporting Tools to SIEM -->
+  <path d="M 170 790 L 500 850" class="data-flow"/>
+  <path d="M 370 790 L 550 850" class="data-flow"/>
+  <path d="M 570 790 L 600 850" class="data-flow"/>
+  <path d="M 770 790 L 660 850" class="data-flow"/>
+  <path d="M 970 790 L 700 850" class="data-flow"/>
+  <path d="M 1170 790 L 750 850" class="data-flow"/>
+  <path d="M 1370 790 L 800 850" class="data-flow"/>
+
+  <text x="800" y="835" text-anchor="middle" class="flow-label">↓ Enrichment &amp; Context to SIEM ↓</text>
+
+  <!-- ============================================ -->
+  <!-- GOVERNANCE LAYER (Top) -->
+  <!-- ============================================ -->
+  <rect x="50" y="480" width="1500" height="130" fill="#e8f8f5" stroke="#1abc9c" stroke-width="2" rx="8"/>
+  <text x="800" y="510" text-anchor="middle" class="section-title">GOVERNANCE, EXECUTIVE &amp; COMPLIANCE LAYER</text>
+
+  <rect x="100" y="530" width="220" height="65" class="tool-box" rx="5"/>
+  <text x="210" y="550" text-anchor="middle" class="component-title">Executive Dashboard</text>
+  <text x="210" y="565" text-anchor="middle" class="component-text">Security posture visibility</text>
+  <text x="210" y="580" text-anchor="middle" class="component-text">Risk metrics, KPIs</text>
+
+  <rect x="350" y="530" width="220" height="65" class="tool-box" rx="5"/>
+  <text x="460" y="550" text-anchor="middle" class="component-title">Compliance Reporting</text>
+  <text x="460" y="565" text-anchor="middle" class="component-text">PCI-DSS, HIPAA, GDPR</text>
+  <text x="460" y="580" text-anchor="middle" class="component-text">Audit evidence, SOX</text>
+
+  <rect x="600" y="530" width="220" height="65" class="tool-box" rx="5"/>
+  <text x="710" y="550" text-anchor="middle" class="component-title">Board Reporting</text>
+  <text x="710" y="565" text-anchor="middle" class="component-text">Cyber risk quantification</text>
+  <text x="710" y="580" text-anchor="middle" class="component-text">Incident summaries</text>
+
+  <rect x="850" y="530" width="220" height="65" class="tool-box" rx="5"/>
+  <text x="960" y="550" text-anchor="middle" class="component-title">Metrics &amp; Analytics</text>
+  <text x="960" y="565" text-anchor="middle" class="component-text">MTTD, MTTR, Dwell Time</text>
+  <text x="960" y="580" text-anchor="middle" class="component-text">SOC efficiency metrics</text>
+
+  <rect x="1100" y="530" width="220" height="65" class="tool-box" rx="5"/>
+  <text x="1210" y="550" text-anchor="middle" class="component-title">Legal/IR Coordination</text>
+  <text x="1210" y="565" text-anchor="middle" class="component-text">Evidence preservation</text>
+  <text x="1210" y="580" text-anchor="middle" class="component-text">Breach notification</text>
+
+  <rect x="1350" y="530" width="180" height="65" class="tool-box" rx="5"/>
+  <text x="1440" y="550" text-anchor="middle" class="component-title">External Partners</text>
+  <text x="1440" y="565" text-anchor="middle" class="component-text">MSSP, IR firms</text>
+  <text x="1440" y="580" text-anchor="middle" class="component-text">Law enforcement</text>
+
+  <!-- Arrows from SIEM to Governance -->
+  <path d="M 660 650 L 660 595" class="data-flow"/>
+  <text x="670" y="625" class="flow-label">Reports</text>
+
+  <!-- ============================================ -->
+  <!-- DATA FLOW SUMMARY -->
+  <!-- ============================================ -->
+  <rect x="50" y="120" width="1500" height="330" fill="#fef9e7" stroke="#f39c12" stroke-width="3" rx="10"/>
+  <text x="800" y="155" text-anchor="middle" class="section-title" font-size="20">KEY DATA FLOWS &amp; INTEGRATIONS</text>
+
+  <!-- Flow 1 -->
+  <rect x="80" y="175" width="450" height="100" fill="#fff" stroke="#3498db" stroke-width="2" rx="5"/>
+  <text x="100" y="200" class="component-title" fill="#3498db">Flow 1: Data Ingestion (Blue Arrows)</text>
+  <text x="100" y="220" class="component-text">• All security tools send logs/telemetry TO SIEM</text>
+  <text x="100" y="235" class="component-text">• EDR, Firewall, Cloud, Identity, Apps → SIEM</text>
+  <text x="100" y="250" class="component-text">• Volume: 10+ million events per day</text>
+  <text x="100" y="265" class="component-text">• SIEM aggregates, normalizes, stores everything</text>
+
+  <!-- Flow 2 -->
+  <rect x="560" y="175" width="450" height="100" fill="#fff" stroke="#e74c3c" stroke-width="2" rx="5"/>
+  <text x="580" y="200" class="component-title" fill="#e74c3c">Flow 2: Alert Generation (Red Arrows)</text>
+  <text x="580" y="220" class="component-text">• SIEM correlates events, detects threats</text>
+  <text x="580" y="235" class="component-text">• Generates ~200 high-confidence alerts/day</text>
+  <text x="580" y="250" class="component-text">• Sends alerts to SOAR for automated response</text>
+  <text x="580" y="265" class="component-text">• Notifies SOC team for investigation</text>
+
+  <!-- Flow 3 -->
+  <rect x="1040" y="175" width="480" height="100" fill="#fff" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="1060" y="200" class="component-title" fill="#27ae60">Flow 3: Automated Response (Green Arrows)</text>
+  <text x="1060" y="220" class="component-text">• SOAR executes playbooks based on SIEM alerts</text>
+  <text x="1060" y="235" class="component-text">• Actions: Isolate endpoint (EDR), Block IP (Firewall),</text>
+  <text x="1060" y="250" class="component-text">  Disable user (AD), Delete email, Create ticket</text>
+  <text x="1060" y="265" class="component-text">• Response time: Seconds (vs. hours manually)</text>
+
+  <!-- SIEM Role Summary -->
+  <rect x="80" y="295" width="1440" height="135" fill="#ffe6e6" stroke="#c0392b" stroke-width="3" rx="8"/>
+  <text x="800" y="325" text-anchor="middle" class="highlight-text" font-size="18">SIEM's Role: The Central Nervous System</text>
+
+  <text x="800" y="355" text-anchor="middle" class="component-text" font-size="13">SIEM is NOT an ecosystem by itself - it's the INTEGRATION HUB that connects the entire security ecosystem</text>
+
+  <rect x="100" y="370" width="330" height="50" fill="#fff" opacity="0.8" rx="5"/>
+  <text x="265" y="390" text-anchor="middle" class="component-text" font-weight="bold">Without SIEM:</text>
+  <text x="265" y="405" text-anchor="middle" class="component-text">• Siloed tools, no correlation</text>
+  <text x="265" y="418" text-anchor="middle" class="component-text">• Alert fatigue (100K+ alerts)</text>
+
+  <rect x="450" y="370" width="330" height="50" fill="#fff" opacity="0.8" rx="5"/>
+  <text x="615" y="390" text-anchor="middle" class="component-text" font-weight="bold">With SIEM:</text>
+  <text x="615" y="405" text-anchor="middle" class="component-text">• Unified visibility across all tools</text>
+  <text x="615" y="418" text-anchor="middle" class="component-text">• Correlated, high-fidelity alerts</text>
+
+  <rect x="800" y="370" width="330" height="50" fill="#fff" opacity="0.8" rx="5"/>
+  <text x="965" y="390" text-anchor="middle" class="component-text" font-weight="bold">With SIEM + SOAR:</text>
+  <text x="965" y="405" text-anchor="middle" class="component-text">• Detection + Automated response</text>
+  <text x="965" y="418" text-anchor="middle" class="component-text">• Complete security operations</text>
+
+  <rect x="1150" y="370" width="350" height="50" fill="#fff" opacity="0.8" rx="5"/>
+  <text x="1325" y="390" text-anchor="middle" class="component-text" font-weight="bold">SIEM + EDR/XDR Together:</text>
+  <text x="1325" y="405" text-anchor="middle" class="component-text">• Deep endpoint data (EDR/XDR)</text>
+  <text x="1325" y="418" text-anchor="middle" class="component-text">• + Enterprise correlation (SIEM)</text>
+
+  <!-- Bottom Note -->
+  <text x="800" y="1900" text-anchor="middle" class="label-text" font-style="italic">CrowdStrike Falcon (EDR/XDR) provides deep endpoint visibility → SIEM correlates with network, cloud, identity, apps → Complete threat picture</text>
+  <text x="800" y="1920" text-anchor="middle" class="label-text" font-style="italic">SIEM is unavoidable in TDR/XDR/EDR discussions because it's where all security data converges for holistic threat detection</text>
+
+  <rect x="50" y="1935" width="1500" height="50" fill="#34495e" rx="5"/>
+  <text x="800" y="1965" text-anchor="middle" class="component-text" fill="#fff" font-size="14" font-weight="bold">Modern Security = Prevention (Firewalls, AV, MFA) + Detection (EDR, XDR, NDR, SIEM) + Response (SOAR, IR) + People (SOC Team)</text>
+</svg>
